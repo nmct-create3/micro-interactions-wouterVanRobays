@@ -578,7 +578,6 @@ a:focus {
     font-family: "Inter UI Web", Helvetica, arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
-    height: 48px;
 }
 
 .c-input:focus {
@@ -711,7 +710,6 @@ a:focus {
     padding: 12px 16px;
     font-size: 16px;
     line-height: 24px;
-    height: 48px;
 }
 
 .c-button:hover {
