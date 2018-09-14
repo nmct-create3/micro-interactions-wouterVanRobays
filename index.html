@@ -38,29 +38,35 @@
             <div class="o-container u-max-width-xs">
                 <form class="c-card u-mb-xl">
                     <div class="c-card__header">
-                        <h4 class="c-card__title">
+                        <h2 class="c-card__title">
                             Sign in to your account
-                        </h4>
+                        </h2>
                     </div>
                     <div class="c-card__body">
                         <p class="c-form-field">
-                            <label class="c-label c-highlight" for="input-1">
+                            <label class="c-label c-highlight" for="username">
                                 Username or email address
                             </label>
-                            <input class="c-input" type="text" id="input-1">
+                            <input class="c-input" type="text" id="username">
                         </p>
                         <p class="c-form-field">
-                            <label class="c-label c-label--with-link c-highlight" for="input-2">
+                            <label class="c-label c-label--with-link c-highlight" for="password">
                                 Password
                             </label>
-                            <input class="c-input c-input--password" type="password" id="input-2">
+                            <input class="c-input c-input--password" type="password" id="password">
                         </p>
-                        <p class="c-form-field c-custom-option">
-                            <input type="checkbox" class="c-custom-option__input" id="rememberme">
-                            <label class="c-label c-label--option c-custom-option__label u-mb-clear" for="rememberme">
-                                <span class="c-custom-option__fake-option">
-                                    <svg class="c-custom-option__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-                                        <path class="c-custom-option__path" d="M4,10c-0.3,0-0.6-0.1-0.8-0.4l-3-4C-0.1,5.2,0,4.5,0.4,4.2C0.8,3.9,1.5,4,1.8,4.4l2.1,2.8l4.2-6.8
+                        <p class="c-form-field c-form-field--option">
+                            <input class="c-input-option" type="checkbox" id="rememberme">
+                            <label class="c-label c-label--option" for="rememberme">
+                                Remember me
+                            </label>
+                        </p>
+                        <p class="c-form-field c-form-field--option">
+                            <input class="c-input-option c-custom-input-option-hidden" type="checkbox" id="customRememberme">
+                            <label class="c-label c-label--option c-custom-input-option-label" for="customRememberme">
+                                <span class="c-custom-input-option">
+                                    <svg class="c-custom-input-option__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                                        <path class="c-custom-input-option__path" d="M4,10c-0.3,0-0.6-0.1-0.8-0.4l-3-4C-0.1,5.2,0,4.5,0.4,4.2C0.8,3.9,1.5,4,1.8,4.4l2.1,2.8l4.2-6.8
                                         	C8.4,0,9.1-0.1,9.5,0.2c0.5,0.3,0.6,0.9,0.3,1.4l-5,8C4.7,9.8,4.4,10,4,10C4,10,4,10,4,10z"/>
                                     </svg>
                                 </span>
@@ -77,7 +83,7 @@
                         </p>
                     </div>
                 </form>
-                <p class="u-align-text-center u-text-sm u-color-neutral-dark">
+                <p class="u-align-text-center u-text-sm u-color-neutral-dark u-mb-xl">
                     Don't have an account? <a href="#">Create an account</a>
                 </p>
             </div>

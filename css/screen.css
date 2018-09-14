@@ -41,7 +41,7 @@
     --color-neutral-xx-dark:       #4b4c60;
     --color-neutral-xxx-dark:      #35374d;
     --color-neutral-xxxx-dark:     #20223a;
-    --radius: 4px;
+    --radius: 3px;
 }
 
 /*------------------------------------*\
@@ -556,6 +556,21 @@ a:focus {
 }
 
 /*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form-field--option {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+
+/*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
@@ -590,6 +605,10 @@ a:focus {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
+.c-input-option {
+    margin-right: 8px;
+}
+
 /*
     Component: Label
     ---
@@ -604,6 +623,10 @@ a:focus {
     color: var(--color-neutral-dark);
 }
 
+.c-label--option {
+    margin-bottom: 0;
+}
+
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
@@ -616,16 +639,8 @@ a:focus {
     Custom checkboxes & radio buttons
 */
 
-.c-custom-option {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-}
-
 /* Hide the actual input but still be able to focus on it */
-.c-custom-option__input {
+.c-custom-input-option-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -636,7 +651,8 @@ a:focus {
     border: 0;
 }
 
-.c-custom-option__label {
+/* the label is a separate component */
+.c-custom-input-option-label {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -644,7 +660,7 @@ a:focus {
     align-items: center;
 }
 
-.c-custom-option__fake-option {
+.c-custom-input-option {
     display: inline-flex;
     -ms-align-items: center;
     align-items: center;
@@ -653,11 +669,10 @@ a:focus {
     height: 16px;
     border-radius: var(--radius);
     margin-right: 8px;
-    background-color: var(--color-neutral-xxxx-light);
     border: 1px solid var(--color-neutral-xxx-light);
 }
 
-.c-custom-option__symbol {
+.c-custom-input-option__symbol {
     width: 10px;
     height: 10px;
     display: none; /* Hide the svg initially */
@@ -665,30 +680,29 @@ a:focus {
 
 /* focused state */
 
-.c-custom-option__input:focus + .c-custom-option__label .c-custom-option__fake-option {
+.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option {
     border: 1px solid var(--color-prime-x-light);
     box-shadow: 0 0 0 3px var(--color-prime-xx-light);
 }
 
 /* checked state */
 
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__fake-option {
+.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option {
     background-color: var(--color-prime-light);
-    color: white;
     border-color: var(--color-prime);
 }
 
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__symbol {
+.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
     display: block; /* Show the svg when the invisible checkbox is checked */
 }
 
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__path {
-    fill: currentColor;
+.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__path {
+    fill: white; /* the checkbox self should be white */
 }
 
 /* focused & checked state */
 
-.c-custom-option__input:focus:checked + .c-custom-option__label .c-custom-option__fake-option {
+.c-custom-option__input:focus:checked + .c-custom-option__label .c-custom-input-option {
     box-shadow: 0 0 0 3px var(--color-prime-xx-light);
 }
 
