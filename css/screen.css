@@ -207,6 +207,11 @@ a:focus {
     color: var(--color-prime-light);
 }
 
+label,
+input {
+    display: block;
+}
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
@@ -580,7 +585,6 @@ a:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    display: block;
     outline: none;
     background-color: white;
     border-radius: var(--radius);
@@ -616,7 +620,6 @@ a:focus {
 */
 
 .c-label {
-    display: block;
     margin-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
