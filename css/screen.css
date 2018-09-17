@@ -639,17 +639,7 @@ input {
     Custom checkboxes & radio buttons
 */
 
-/* Hide the actual input but still be able to focus on it */
-.c-custom-input-option-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
+/* Hide the actual input with the class .o-hide-accessible */
 
 /* the label is a separate component */
 .c-custom-input-option-label {
