@@ -526,8 +526,15 @@ input {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
 }
 
-.c-card__body {
+.c-card__body,
+.c-card__footer {
     padding: 24px 24px 0;
+    overflow: auto;
+}
+
+.c-card__footer {
+    text-align: center;
+    border-top: 1px solid var(--color-neutral-xxx-light);
 }
 
 .c-card__title {
