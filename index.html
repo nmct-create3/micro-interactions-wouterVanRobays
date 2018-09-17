@@ -17,6 +17,17 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
+        <script type="text/javascript">
+            function togglePassword() {
+                var passwordInput = document.querySelector(".js-password-input");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                } else {
+                    passwordInput.type = "password";
+                }
+            }
+        </script>
     </head>
     <body>
         <header class="o-row o-row--header">
@@ -52,6 +63,7 @@
                                 Password
                             </label>
                             <input class="c-input c-input--password" type="password" id="password">
+                            </span>
                         </p>
                         <!-- Native checkbox -->
                         <p class="c-form-field c-form-field--option">
