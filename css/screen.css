@@ -608,12 +608,6 @@ input {
     margin-bottom: 0;
 }
 
-/* If a input is focused within the form-field class change te color of the label */
-
-.c-form-field:focus-within .c-label {
-    color: var(--color-neutral-xxxx-dark);
-}
-
 /*
     Custom option
     ---
