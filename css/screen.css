@@ -526,10 +526,11 @@ input {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
 }
 
+/* Add padding to child for more flexibility */
 .c-card__body,
 .c-card__footer {
     padding: 24px 24px 0;
-    overflow: auto;
+    overflow: auto; /* Fix margin collapse */
 }
 
 .c-card__footer {
