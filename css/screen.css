@@ -79,13 +79,13 @@ html {
 */
 
 ::-moz-selection {
-    background: var(--color-prime);
+    background: var(--color-alpha);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: var(--color-prime);
+    background: var(--color-alpha);
     color: white;
     text-shadow: none;
 }
@@ -191,20 +191,20 @@ hr {
 
 a {
     transition: all .1s ease-in-out;
-    color: var(--color-prime);
-    outline-color: var(--color-prime);
+    color: var(--color-alpha);
+    outline-color: var(--color-alpha);
     outline-width: medium;
     outline-offset: 2px;
 }
 
 a:visited,
 a:active {
-    color: var(--color-prime);
+    color: var(--color-alpha);
 }
 
 a:hover,
 a:focus {
-    color: var(--color-prime-light);
+    color: var(--color-alpha-light);
 }
 
 label,
@@ -596,8 +596,8 @@ input {
 }
 
 .c-input:focus {
-    border: 1px solid var(--color-prime-x-light);
-    box-shadow: 0 0 0 3px var(--color-prime-xx-light);
+    border-color: var(--color-alpha-x-light);
+    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
 .c-input-option {
@@ -675,15 +675,15 @@ input {
 /* focused state */
 
 .c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option {
-    border: 1px solid var(--color-prime-x-light);
-    box-shadow: 0 0 0 3px var(--color-prime-xx-light);
+    border: 1px solid var(--color-alpha-x-light);
+    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
 /* checked state */
 
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option {
-    background-color: var(--color-prime-light);
-    border-color: var(--color-prime);
+    background-color: var(--color-alpha-light);
+    border-color: var(--color-alpha);
 }
 
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
@@ -697,7 +697,7 @@ input {
 /* focused & checked state */
 
 .c-custom-option__input:focus:checked + .c-custom-option__label .c-custom-input-option {
-    box-shadow: 0 0 0 3px var(--color-prime-xx-light);
+    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
 /*
@@ -707,31 +707,30 @@ input {
 */
 
 .c-button {
-    display: inline-block;
-    border: 1px solid var(--color-prime-dark);
-    text-decoration: none;
-    background-color: var(--color-prime);
-    color: #fff;
+    font-size: 16px;
     font-weight: 700;
     border-radius: var(--radius);
-    transition: all .1s ease-in;
+    border: 1px solid var(--color-alpha-dark);
+    background-color: var(--color-alpha);
+    color: #fff;
     padding: 11px 16px;
-    font-size: 16px;
     line-height: 24px;
+    width: 100%;
+    outline: none;
+    transition: all .1s ease-in;
 }
 
 .c-button:hover {
-    background-color: var(--color-prime-light);
+    background-color: var(--color-alpha-light);
 }
 
 .c-button:focus {
-    outline: none;
-    background-color: var(--color-prime);
-    box-shadow: 0 0 0 3px var(--color-prime-xx-light);
+    background-color: var(--color-alpha);
+    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
 .c-button:active {
-    background-color: var(--color-prime-dark);
+    background-color: var(--color-alpha-dark);
     box-shadow: none;
 }
 
@@ -745,8 +744,8 @@ input {
     Utility classes to put specific colors onto elements
 */
 
-.u-color-neutral-base {
-    color: var(--color-neutral-base);
+.u-color-neutral {
+    color: var(--color-neutral);
 }
 
 .u-color-neutral-dark {
