@@ -25,22 +25,22 @@
 \*------------------------------------*/
 
 :root {
-    --color-prime-xx-light:        #DCEAFF;
-    --color-prime-x-light:         #81ADF0;
-    --color-prime-light:           #4F95FF;
-    --color-prime:                 #3385FF;
-    --color-prime-dark:            #2E77E6;
-    --color-neutral-xxxx-light:    #F5F6FA;
-    --color-neutral-xxx-light:     #E2E3E7;
-    --color-neutral-xx-light:      #caccd4;
-    --color-neutral-x-light:       #b5b6c0;
-    --color-neutral-light:         #a0a1ad;
-    --color-neutral-base:          #8b8c9a;
-    --color-neutral-dark:          #757787;
-    --color-neutral-x-dark:        #606274;
-    --color-neutral-xx-dark:       #4b4c60;
-    --color-neutral-xxx-dark:      #35374d;
-    --color-neutral-xxxx-dark:     #20223a;
+    --color-alpha-xx-light: #DCEAFF;
+    --color-alpha-x-light: #81ADF0;
+    --color-alpha-light: #4F95FF;
+    --color-alpha: #3385FF;
+    --color-alpha-dark: #2E77E6;
+    --color-neutral-xxxx-light: #F5F6FA;
+    --color-neutral-xxx-light: #E2E3E7;
+    --color-neutral-xx-light: #caccd4;
+    --color-neutral-x-light: #b5b6c0;
+    --color-neutral-light: #a0a1ad;
+    --color-neutral: #8b8c9a;
+    --color-neutral-dark: #757787;
+    --color-neutral-x-dark: #606274;
+    --color-neutral-xx-dark: #4b4c60;
+    --color-neutral-xxx-dark: #35374d;
+    --color-neutral-xxxx-dark: #20223a;
     --radius: 3px;
 }
 
