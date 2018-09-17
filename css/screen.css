@@ -526,37 +526,24 @@ input {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
 }
 
-/* Reset bottom margins on children to make equal paddings possible */
-.c-card > *:last-child,
-.c-card > *:last-child > *:last-child,
-.c-card > *:last-child > *:last-child > *:last-child {
-    margin-bottom: 0;
-}
-
-.c-card__body,
-.c-card__header {
-    padding: 24px;
-}
-
-.c-card__header {
-    text-align: center;
+.c-card__body {
+    padding: 24px 24px 0;
 }
 
 .c-card__title {
-    margin-bottom: 0;
+    text-align: center;
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
 }
 
-@media (min-width: 576px) {
-    .c-card__body,
-    .c-card__header {
-        padding: 48px;
+@media (min-width: 27em) {
+    .c-card__body {
+        padding: 48px 48px 24px;
     }
 
-    .c-card__header {
-        padding-bottom: 0;
+    .c-card__title {
+        margin-bottom: 48px;
     }
 }
 
