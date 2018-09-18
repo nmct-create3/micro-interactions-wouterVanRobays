@@ -43,7 +43,12 @@
     --color-neutral-xx-dark: #4b4c60;
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
+
+    /* border radius */
     --radius: 3px;
+
+    /* transitions */
+    --transition-alpha: all .1s ease-in-out;
 }
 
 /*------------------------------------*\
@@ -192,7 +197,7 @@ hr {
 }
 
 a {
-    transition: all .1s ease-in-out;
+    transition: var(--transition-alpha);
     color: var(--color-alpha);
     outline-color: var(--color-alpha);
     outline-width: medium;
@@ -727,7 +732,7 @@ more padding on the right to avoid overlap
     line-height: 24px;
     width: 100%;
     outline: none;
-    transition: all .1s ease-in;
+    transition: var(--transition-alpha);
 }
 
 .c-button:hover {
