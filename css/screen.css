@@ -612,6 +612,17 @@ input {
     box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
+/*
+Input password with toggle checkbox on top of it needs
+more padding on the right to avoid overlap
+*/
+
+.c-input--password-with-toggle {
+    padding-right: 52px;
+}
+
+/* option input for checkboxes and radio buttons */
+
 .c-input-option {
     margin-right: 8px;
 }
@@ -749,13 +760,12 @@ input {
 }
 
 .c-password-toggle__label {
-    height: 100%;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     -ms-align-items: center;
     align-items: center;
-    padding: 16px;
+    padding: 14px 16px;
 }
 
 .c-password-toggle__symbol {
