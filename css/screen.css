@@ -25,11 +25,13 @@
 \*------------------------------------*/
 
 :root {
+    /* colors */
     --color-alpha-xx-light: #DCEAFF;
     --color-alpha-x-light: #81ADF0;
     --color-alpha-light: #4F95FF;
     --color-alpha: #3385FF;
     --color-alpha-dark: #2E77E6;
+    --color-alpha-x-dark: #1B4186;
     --color-neutral-xxxx-light: #F5F6FA;
     --color-neutral-xxx-light: #E2E3E7;
     --color-neutral-xx-light: #caccd4;
