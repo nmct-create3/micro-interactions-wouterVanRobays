@@ -642,6 +642,7 @@ more padding on the right to avoid overlap
 
 .c-label--option {
     margin-bottom: 0;
+    margin-left: 8px;
 }
 
 /*
