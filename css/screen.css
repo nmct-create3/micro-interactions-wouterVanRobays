@@ -234,17 +234,18 @@ input {
     padding: 24px 24px 0;
 }
 
-.o-row--header {
-    padding: 48px 24px 0;
-}
-
-.o-row--body {
-    min-height: calc(100vh - 96px);
+.o-row--login {
+    min-height: 100vh;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     -ms-align-items: center;
     align-items: center;
+}
+
+.o-row--beta {
+    background-color: var(--color-alpha);
+    background-image: linear-gradient(to bottom right, var(--color-alpha-light), var(--color-alpha-dark));
 }
 
 /* size modifiers */
@@ -263,16 +264,6 @@ input {
     .o-row {
         padding-left: 48px;
         padding-right: 48px;
-    }
-
-    .o-row--md {
-        padding-top: 48px;
-        padding-bottom: 24px;
-    }
-
-    .o-row--lg {
-        padding-top: 72px;
-        padding-bottom: 48px;
     }
 }
 
@@ -519,22 +510,30 @@ input {
     height: 24px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
 }
 
 .c-logo__symbol {
     height: 100%;
 }
 
-/*
-    Component: header
-    ---
-    Main header of the website
-*/
+.c-logo__path--1 {
+    fill: var(--color-neutral-xxxx-dark);
+}
 
-.c-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.c-logo__path--2 {
+    fill: var(--color-alpha);
+}
+
+.c-logo__path--3 {
+    fill: var(--color-alpha-x-dark);
+}
+
+/* Light logo alternative */
+
+.c-logo--light .c-logo__path {
+    fill: white;
 }
 
 /*
