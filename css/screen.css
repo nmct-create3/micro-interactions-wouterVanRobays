@@ -44,11 +44,15 @@
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
 
+    /* input inset shadow */
+    --inset-shadow-color: #20223a15;
+    --inset-shadow: inset 0 1px 1px var(--inset-shadow-color);
+
     /* border radius */
     --radius: 3px;
 
     /* transitions */
-    --transition-alpha: all .1s ease-in-out;
+    --transition-alpha: .1s ease-in-out;
 }
 
 /*------------------------------------*\
@@ -197,7 +201,7 @@ hr {
 }
 
 a {
-    transition: var(--transition-alpha);
+    transition: all var(--transition-alpha);
     color: var(--color-alpha);
     outline-color: var(--color-alpha);
     outline-width: medium;
@@ -217,6 +221,10 @@ a:focus {
 label,
 input {
     display: block;
+}
+
+input::placeholder {
+    color: var(--color-neutral-x-light);
 }
 
 /*------------------------------------*\
@@ -547,6 +555,7 @@ input {
     margin-bottom: 24px;
     border-radius: var(--radius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
+    overflow: hidden;
 }
 
 /* Add padding to child for more flexibility */
@@ -559,6 +568,7 @@ input {
 .c-card__footer {
     text-align: center;
     border-top: 1px solid var(--color-neutral-xxx-light);
+    background-color: var(--color-neutral-xxxx-light);
 }
 
 .c-card__title {
@@ -611,9 +621,16 @@ input {
     line-height: 24px;
     padding: 11px 16px;
     outline: none;
+    box-shadow: var(--inset-shadow);
+    transition: border var(--transition-alpha);
 }
 
-.c-input:focus {
+.c-input:hover {
+    border-color: var(--color-neutral-xx-light);
+}
+
+.c-input:focus,
+.c-input:active {
     border-color: var(--color-alpha-x-light);
     box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
@@ -640,14 +657,15 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-    margin-bottom: 8px;
+    margin-bottom: 0;
+    padding-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
     color: var(--color-neutral-x-dark);
 }
 
 .c-label--option {
-    margin-bottom: 0;
+    padding-bottom: 0;
     margin-left: 8px;
 }
 
@@ -666,6 +684,7 @@ more padding on the right to avoid overlap
     display: flex;
     -ms-align-items: center;
     align-items: center;
+    padding-bottom: 0;
 }
 
 .c-custom-input-option {
@@ -678,40 +697,38 @@ more padding on the right to avoid overlap
     border-radius: var(--radius);
     margin-right: 8px;
     border: 1px solid var(--color-neutral-xxx-light);
+    box-shadow: var(--inset-shadow);
+    transition: border var(--transition-alpha);
 }
 
 .c-custom-input-option__symbol {
     width: 10px;
     height: 10px;
-    display: none; /* Hide the svg initially */
+    fill: var(--color-alpha);
+    opacity: 0; /* Hide the svg initially */
+    transform: scale(.5);
+    transition: all var(--transition-alpha);
 }
 
-/* focused state */
+/* hover state */
 
-.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option {
+.c-custom-input-option-label:hover .c-custom-input-option {
+    border-color: var(--color-neutral-xx-light);
+}
+
+/* focused and active state */
+
+.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option,
+.c-custom-input-option-hidden:active + .c-custom-input-option-label .c-custom-input-option {
     border: 1px solid var(--color-alpha-x-light);
     box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
 /* checked state */
 
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option {
-    background-color: var(--color-alpha-light);
-    border-color: var(--color-alpha);
-}
-
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
-    display: block; /* Show the svg when the invisible checkbox is checked */
-}
-
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__path {
-    fill: white; /* the checkbox self should be white */
-}
-
-/* focused & checked state */
-
-.c-custom-option__input:focus:checked + .c-custom-option__label .c-custom-input-option {
-    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
+    opacity: 1; /* Show the svg when the invisible checkbox is checked */
+    transform: scale(1);
 }
 
 /*
@@ -731,7 +748,7 @@ more padding on the right to avoid overlap
     line-height: 24px;
     width: 100%;
     outline: none;
-    transition: var(--transition-alpha);
+    transition: all var(--transition-alpha);
 }
 
 .c-button:hover {
