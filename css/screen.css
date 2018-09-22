@@ -44,9 +44,9 @@
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
 
-    /* input inset shadow */
-    --inset-shadow-color: #20223a15;
-    --inset-shadow: inset 0 1px 1px var(--inset-shadow-color);
+    /* Shadows */
+    --shadow-color: #20223a15;
+    --inset-shadow: inset 0 1px 1px var(--shadow-color);
 
     /* border radius */
     --radius: 3px;
