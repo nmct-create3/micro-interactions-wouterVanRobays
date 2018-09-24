@@ -1,2 +1,2 @@
-# HTML5 boilerplate
-This is my HTML5 boilerplate. I use it to build fast, robust, and adaptable web apps or sites.
+# Create 3 labo 1
+This is the solution for labo 1 of Create 3.
