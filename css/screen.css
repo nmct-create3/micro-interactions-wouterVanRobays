@@ -149,7 +149,8 @@ h3 {
 h4,
 h5,
 h6 {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 24px;
     margin: 0 0 24px;
 }
@@ -689,6 +690,40 @@ more padding on the right to avoid overlap
 }
 
 /*
+    Component: Button
+    ---
+    Class to put on form buttons or
+*/
+
+.c-button {
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-alpha-dark);
+    background-color: var(--color-alpha);
+    color: #fff;
+    padding: 11px 16px;
+    line-height: 24px;
+    width: 100%;
+    outline: none;
+    transition: all var(--transition-alpha);
+}
+
+.c-button:hover {
+    background-color: var(--color-alpha-light);
+}
+
+.c-button:focus {
+    background-color: var(--color-alpha);
+    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
+}
+
+.c-button:active {
+    background-color: var(--color-alpha-dark);
+    box-shadow: none;
+}
+
+/*
     Custom option
     ---
     Custom checkboxes & radio buttons
@@ -769,37 +804,83 @@ more padding on the right to avoid overlap
 }
 
 /*
-    Component: Button
+    Component: Custom Toggle
     ---
-    Class to put on form buttons or
+    Visually change a checkbox into a toggle
 */
 
-.c-button {
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-alpha-dark);
-    background-color: var(--color-alpha);
-    color: #fff;
-    padding: 11px 16px;
-    line-height: 24px;
-    width: 100%;
-    outline: none;
+.c-toggle-list {
+
+}
+
+.c-toggle-list__item {
+    margin-bottom: 12px;
+}
+
+.c-toggle-list__item + .c-toggle-list__item {
+    padding-top: 12px;
+    border-top: 1px solid var(--color-neutral-xxx-light);
+}
+
+.c-toggle__label {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.c-toggle__label--inverted {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.c-toggle__input {
+    display: block;
+    height: 24px;
+    width: 48px;
+    margin-right: 16px;
+    background-color: var(--color-neutral-xxxx-light);
+    border-radius: 32px;
+    border: 1px solid var(--color-neutral-xxx-light);
     transition: all var(--transition-alpha);
 }
 
-.c-button:hover {
-    background-color: var(--color-alpha-light);
+.c-toggle__label--inverted .c-toggle__input {
+    margin-right: 0;
 }
 
-.c-button:focus {
-    background-color: var(--color-alpha);
+.c-toggle__input::after {
+    display: block;
+    content: '';
+    height: 22px;
+    width: 22px;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+    background-color: #fff;
+    transition: transform var(--transition-alpha);
+}
+
+/* focused and active state */
+
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
+    border: 1px solid var(--color-alpha-x-light);
     box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
-.c-button:active {
-    background-color: var(--color-alpha-dark);
-    box-shadow: none;
+/* checked state */
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
+    transform: translate(24px,0);
+}
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
+    background-color: var(--color-alpha);
+    border-color: var(--color-alpha-dark);
 }
 
 /*
