@@ -223,6 +223,10 @@ input {
     display: block;
 }
 
+select {
+    width: 100%;
+}
+
 input::placeholder {
     color: var(--color-neutral-x-light);
 }
@@ -603,6 +607,20 @@ input::placeholder {
 }
 
 /*
+    Component: Option list
+    ---
+
+*/
+
+.c-option-list {
+    margin-bottom: 24px;
+}
+
+.c-option-list__item {
+    margin-bottom: 12px;
+}
+
+/*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
@@ -615,6 +633,7 @@ input::placeholder {
     width: 100%;
     border: 1px solid var(--color-neutral-xxx-light);
     border-radius: var(--radius);
+    background-color: #fff;
     color: var(--color-neutral-xxxx-dark);
     font-family: inherit;
     font-size: 16px;
@@ -694,20 +713,38 @@ more padding on the right to avoid overlap
     justify-content: center;
     width: 16px;
     height: 16px;
-    border-radius: var(--radius);
     margin-right: 8px;
     border: 1px solid var(--color-neutral-xxx-light);
     box-shadow: var(--inset-shadow);
     transition: border var(--transition-alpha);
 }
 
+.c-custom-input-option--checkbox {
+    border-radius: var(--radius);
+}
+
+.c-custom-input-option--radio {
+    border-radius: 100%;
+}
+
 .c-custom-input-option__symbol {
-    width: 10px;
-    height: 10px;
-    fill: var(--color-alpha);
+    display: block;
     opacity: 0; /* Hide the svg initially */
     transform: scale(.5);
     transition: all var(--transition-alpha);
+}
+
+.c-custom-input-option--checkbox .c-custom-input-option__symbol {
+    width: 10px;
+    height: 10px;
+    fill: var(--color-alpha);
+}
+
+.c-custom-input-option--radio .c-custom-input-option__symbol {
+    background-color: var(--color-alpha);
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
 }
 
 /* hover state */
@@ -763,6 +800,28 @@ more padding on the right to avoid overlap
 .c-button:active {
     background-color: var(--color-alpha-dark);
     box-shadow: none;
+}
+
+/*
+    Component: Custom Select
+    ---
+    Custom select dropdown
+*/
+
+
+.c-custom-select {
+    display: block;
+    position: relative;
+}
+
+.c-custom-select__symbol {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    pointer-events: none;
+    fill: var(--color-neutral-x-light);
 }
 
 /*
