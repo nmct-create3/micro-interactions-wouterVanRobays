@@ -610,20 +610,6 @@ input::placeholder {
 }
 
 /*
-    Component: Option list
-    ---
-
-*/
-
-.c-option-list {
-    margin-bottom: 24px;
-}
-
-.c-option-list__item {
-    margin-bottom: 12px;
-}
-
-/*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
@@ -726,6 +712,20 @@ more padding on the right to avoid overlap
 }
 
 /*
+    Component: Option list
+    ---
+
+*/
+
+.c-option-list {
+    margin-bottom: 24px;
+}
+
+.c-option-list__item {
+    margin-bottom: 12px;
+}
+
+/*
     Custom option
     ---
     Custom checkboxes & radio buttons
@@ -811,7 +811,7 @@ more padding on the right to avoid overlap
 */
 
 .c-toggle-list {
-
+    margin-bottom: 24px;
 }
 
 .c-toggle-list__item {
