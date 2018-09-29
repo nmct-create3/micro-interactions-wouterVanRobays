@@ -827,7 +827,6 @@ more padding on the right to avoid overlap
     display: flex;
     -ms-align-items: center;
     align-items: center;
-    padding-bottom: 0;
 }
 
 .c-toggle__label--inverted {
