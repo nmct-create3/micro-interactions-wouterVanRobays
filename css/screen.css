@@ -674,7 +674,6 @@ more padding on the right to avoid overlap
 
 .c-label--option {
     padding-bottom: 0;
-    margin-left: 8px;
 }
 
 /*
@@ -740,7 +739,6 @@ more padding on the right to avoid overlap
     display: flex;
     -ms-align-items: center;
     align-items: center;
-    padding-bottom: 0;
 }
 
 .c-custom-input-option {
