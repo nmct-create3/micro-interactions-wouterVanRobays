@@ -873,13 +873,13 @@ more padding on the right to avoid overlap
 
 /* checked state */
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
-    transform: translate(24px,0);
-}
-
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
     background-color: var(--color-alpha);
     border-color: var(--color-alpha-dark);
+}
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
+    transform: translate(24px,0);
 }
 
 /* alternative design */
@@ -920,6 +920,11 @@ more padding on the right to avoid overlap
 
 /* checked state */
 
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
+    background-color: var(--color-alpha-xx-light);
+    border-color: white;
+}
+
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative::after {
     transform: translate(18px,-2px);
     background-color: var(--color-alpha);
@@ -929,11 +934,6 @@ more padding on the right to avoid overlap
 .c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
 .c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
     border-color: var(--color-alpha-dark);
-}
-
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
-    background-color: var(--color-alpha-xx-light);
-    border-color: white;
 }
 
 /* Make it wobble */
