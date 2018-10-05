@@ -905,6 +905,10 @@ more padding on the right to avoid overlap
     box-shadow: none;
 }
 
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
+    transform: translate(-2px,-2px) scaleY(.9);
+}
+
 .c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after,
 .c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
     border-color: var(--color-alpha-x-light);
@@ -922,6 +926,10 @@ more padding on the right to avoid overlap
 .c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
 .c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
     border-color: var(--color-alpha-dark);
+}
+
+.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
+    transform: translate(18px,-2px) scaleY(.9);
 }
 
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
