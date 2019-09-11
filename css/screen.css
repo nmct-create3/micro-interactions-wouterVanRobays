@@ -258,11 +258,6 @@ input::placeholder {
     align-items: center;
 }
 
-.o-row--beta {
-    background-color: var(--color-alpha);
-    background-image: linear-gradient(to bottom right, var(--color-alpha-light), var(--color-alpha-dark));
-}
-
 /* size modifiers */
 
 .o-row--lg {
@@ -545,12 +540,6 @@ input::placeholder {
     fill: var(--color-alpha-x-dark);
 }
 
-/* Light logo alternative */
-
-.c-logo--light .c-logo__path {
-    fill: white;
-}
-
 /*
     Component: Card
     ---
@@ -575,7 +564,6 @@ input::placeholder {
 .c-card__footer {
     text-align: center;
     border-top: 1px solid var(--color-neutral-xxx-light);
-    background-color: var(--color-neutral-xxxx-light);
 }
 
 .c-card__title {
