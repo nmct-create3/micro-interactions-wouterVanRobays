@@ -44,17 +44,82 @@
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
 
-    /* Shadows */
-    --shadow-color: #20223a15;
-    --inset-shadow: inset 0 1px 1px var(--shadow-color);
-    --focus-shadow-color: #3385FF30;
-    --focus-shadow: 0 0 0 3px var(--focus-shadow-color);
+    --color-error: #FF3333;
 
     /* border radius */
     --radius: 3px;
 
     /* transitions */
     --transition-alpha: .1s ease-in-out;
+
+    /* theme colors */
+    --html-text-color: var(--color-neutral-xxxx-dark);
+    --html-background-color: var(--color-neutral-xxxx-light);
+
+    --logo-path-1-fill: var(--color-neutral-xxxx-dark);
+    --logo-path-2-fill: var(--color-alpha);
+    --logo-path-3-fill: var(--color-alpha-x-dark);
+
+    --card-background-color: White;
+    --card-footer-border-color: var(--color-neutral-xxx-light);
+
+    --label-text-color: var(--color-neutral-xx-dark);
+
+    --input-background-color: White;
+    --input-border-color: var(--color-neutral-xxx-light);
+    --input-border-color-hover: var(--color-neutral-xx-light);
+    --input-border-color-focus: var(--color-alpha);
+    --input-text-color: var(--color-neutral-xxxx-dark);
+    --input-shadow: inset 0 1px 1px #20223A15;
+    --input-shadow-focus: 0 0 0 3px #3385ff4d;
+    --input-error-border-color: var(--color-error);
+    --input-error-shadow-focus: 0 0 0 3px #FF33334d;
+    --input-placeholder-color: var(--color-neutral-x-light);
+
+    --custom-input-option-fill: var(--color-alpha);
+
+    --password-toggle-symbol-fill: var(--color-neutral-x-light);
+
+    --button-border-color: var(--color-alpha-dark);
+    --button-border-color-hover: var(--button-border-color);
+    --button-border-color-active: var(--button-border-color);
+    --button-border-color-focus: var(--button-border-color);
+    --button-background-color: var(--color-alpha);
+    --button-background-color-hover: var(--color-alpha-light);
+    --button-background-color-focus: var(--button-background-color);
+    --button-background-color-active: var(--color-alpha-dark);
+    --button-shadow-focus: var(--input-shadow-focus);
+}
+
+.is-dark {
+    --html-text-color: White;
+    --html-background-color: var(--color-neutral-xxxx-dark);
+
+    --logo-path-1-fill: White;
+    --logo-path-2-fill: var(--logo-path-1-fill);
+    --logo-path-3-fill: var(--logo-path-1-fill);
+
+    --card-background-color: var(--color-neutral-xxx-dark);
+    --card-footer-border-color: var(--color-neutral-xxxx-dark);
+
+    --label-text-color: var(--color-neutral-xx-light);
+
+    --input-background-color: var(--color-neutral-xxxx-dark);
+    --input-border-color: var(--input-background-color);
+    --input-border-color-hover: var(--input-background-color);
+    --input-border-color-focus: var(--input-background-color);
+    --input-text-color: var(--color-neutral-xxxx-light);
+    /* --input-shadow-focus: 0 0 0 1px var(--input-border-color), 0 0 0 3px var(--color-alpha); */
+    --input-placeholder-color: var(--color-neutral-dark);
+
+    --password-toggle-symbol-fill: var(--color-neutral-x-dark);
+
+    --button-border-color: var(--color-alpha);
+    --button-border-color-hover: var(--color-alpha-light);
+    --button-border-color-active: var(--color-alpha-dark);
+    --button-background-color-hover: var(--color-alpha-light);
+    --button-background-color-focus: var(--button-background-color);
+    --button-background-color-active: var(--color-alpha-dark);
 }
 
 /*------------------------------------*\
@@ -71,11 +136,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter UI Web", Helvetica, arial, sans-serif;
-    color: var(--color-neutral-xxxx-dark);
+    color: var(--html-text-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-neutral-xxxx-light);
+    background-color: var(--html-background-color);
 }
 
 *,
@@ -231,7 +296,7 @@ select {
 }
 
 input::placeholder {
-    color: var(--color-neutral-x-light);
+    color: var(--input-placeholder-color);
 }
 
 /*------------------------------------*\
@@ -529,15 +594,15 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--color-neutral-xxxx-dark);
+    fill: var(--logo-path-1-fill);
 }
 
 .c-logo__path--2 {
-    fill: var(--color-alpha);
+    fill: var(--logo-path-2-fill);
 }
 
 .c-logo__path--3 {
-    fill: var(--color-alpha-x-dark);
+    fill: var(--logo-path-3-fill);
 }
 
 /*
@@ -547,7 +612,7 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: white;
+    background-color: var(--card-background-color);
     margin-bottom: 24px;
     border-radius: var(--radius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -563,7 +628,7 @@ input::placeholder {
 
 .c-card__footer {
     text-align: center;
-    border-top: 1px solid var(--color-neutral-xxx-light);
+    border-top: 1px solid var(--card-footer-border-color);
 }
 
 .c-card__title {
@@ -608,27 +673,39 @@ input::placeholder {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: 1px solid var(--color-neutral-xxx-light);
+    border: 1px solid var(--input-border-color);
     border-radius: var(--radius);
-    background-color: #fff;
-    color: var(--color-neutral-xxxx-dark);
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
     font-family: inherit;
     font-size: 16px;
     line-height: 24px;
     padding: 11px 16px;
     outline: none;
-    box-shadow: var(--inset-shadow);
+    box-shadow: var(--input-shadow);
     transition: border var(--transition-alpha);
 }
 
 .c-input:hover {
-    border-color: var(--color-neutral-xx-light);
+    border-color: var(--input-border-color-hover);
 }
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--color-alpha-x-light);
-    box-shadow: var(--focus-shadow);
+    border-color: var(--input-border-color-focus);
+    box-shadow: var(--input-shadow-focus);
+}
+
+.c-input--error,
+.c-input--error:hover,
+.c-input--error:focus,
+.c-input--error:active {
+    border-color: var(--input-error-border-color);
+}
+
+.c-input--error:focus,
+.c-input--error:active {
+    box-shadow: var(--input-error-shadow-focus);
 }
 
 /*
@@ -657,11 +734,20 @@ more padding on the right to avoid overlap
     padding-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
-    color: var(--color-neutral-x-dark);
+    color: var(--label-text-color);
+}
+
+.c-label--error {
+    color: var(--color-error);
 }
 
 .c-label--option {
     padding-bottom: 0;
+}
+
+.c-label__error-message {
+    font-weight: 700;
+    float: right;
 }
 
 /*
@@ -674,8 +760,8 @@ more padding on the right to avoid overlap
     font-size: 16px;
     font-weight: 700;
     border-radius: var(--radius);
-    border: 1px solid var(--color-alpha-dark);
-    background-color: var(--color-alpha);
+    border: 1px solid var(--button-border-color);
+    background-color: var(--button-background-color);
     color: #fff;
     padding: 11px 16px;
     line-height: 24px;
@@ -685,16 +771,19 @@ more padding on the right to avoid overlap
 }
 
 .c-button:hover {
-    background-color: var(--color-alpha-light);
+    border-color: var(--button-border-color-hover);
+    background-color: var(--button-background-color-hover);
 }
 
 .c-button:focus {
-    background-color: var(--color-alpha);
-    box-shadow: var(--focus-shadow);
+    background-color: var(--button-background-color-focus);
+    border-color: var(--button-border-color-focus);
+    box-shadow: var(--button-shadow-focus);
 }
 
 .c-button:active {
-    background-color: var(--color-alpha-dark);
+    background-color: var(--button-background-color-active);
+    border-color: var(--button-border-color-active);
     box-shadow: none;
 }
 
@@ -737,8 +826,9 @@ more padding on the right to avoid overlap
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    border: 1px solid var(--color-neutral-xxx-light);
-    box-shadow: var(--inset-shadow);
+    background: var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    box-shadow: var(--input-shadow);
     transition: border var(--transition-alpha);
 }
 
@@ -760,11 +850,11 @@ more padding on the right to avoid overlap
 .c-custom-input-option--checkbox .c-custom-input-option__symbol {
     width: 10px;
     height: 10px;
-    fill: var(--color-alpha);
+    fill: var(--custom-input-option-fill);
 }
 
 .c-custom-input-option--radio .c-custom-input-option__symbol {
-    background-color: var(--color-alpha);
+    background-color: var(--custom-input-option-fill);
     border-radius: 100%;
     width: 6px;
     height: 6px;
@@ -773,15 +863,15 @@ more padding on the right to avoid overlap
 /* hover state */
 
 .c-custom-input-option-label:hover .c-custom-input-option {
-    border-color: var(--color-neutral-xx-light);
+    border-color: var(--input-border-color-hover);
 }
 
 /* focused and active state */
 
 .c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option,
 .c-custom-input-option-hidden:active + .c-custom-input-option-label .c-custom-input-option {
-    border: 1px solid var(--color-alpha-x-light);
-    box-shadow: var(--focus-shadow);
+    border: 1px solid var(--input-border-color-focus);
+    box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
@@ -841,11 +931,12 @@ more padding on the right to avoid overlap
 }
 
 .c-toggle__input::after {
+    position: relative;
     display: block;
     content: '';
     height: 22px;
     width: 22px;
-    border-radius: 100%;
+    border-radius: 22px;
     box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
     background-color: #fff;
     transition: all var(--transition-alpha);
@@ -870,6 +961,14 @@ more padding on the right to avoid overlap
     transform: translate(24px,0);
 }
 
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input::after {
+    width: 28px;
+}
+
+.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input::after {
+    margin-left: -6px;
+}
+
 /* alternative design */
 
 .c-toggle__input--alternative {
@@ -892,6 +991,14 @@ more padding on the right to avoid overlap
 .c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative {
     border-color: white;
     box-shadow: none;
+}
+
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
+    width: 22px;
+}
+
+.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
+    margin-left: 0;
 }
 
 .c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after,
@@ -983,7 +1090,7 @@ more padding on the right to avoid overlap
     display: block;
     width: 20px;
     height: 20px;
-    fill: var(--color-neutral-x-light);
+    fill: var(--password-toggle-symbol-fill);
 }
 
 .c-password-toggle__symbol--hide {
