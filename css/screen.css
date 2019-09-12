@@ -109,7 +109,6 @@
     --input-border-color-hover: var(--input-background-color);
     --input-border-color-focus: var(--input-background-color);
     --input-text-color: var(--color-neutral-xxxx-light);
-    /* --input-shadow-focus: 0 0 0 1px var(--input-border-color), 0 0 0 3px var(--color-alpha); */
     --input-placeholder-color: var(--color-neutral-dark);
 
     --password-toggle-symbol-fill: var(--color-neutral-x-dark);
