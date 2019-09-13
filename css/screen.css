@@ -828,7 +828,7 @@ more padding on the right to avoid overlap
     align-items: center;
 }
 
-.c-custom-input-option__copy {
+.c-custom-input-option__fake {
     display: flex;
     -ms-align-items: center;
     align-items: center;
@@ -842,11 +842,11 @@ more padding on the right to avoid overlap
     transition: all var(--transition-alpha);
 }
 
-.c-custom-input-option__copy--checkbox {
+.c-custom-input-option__fake--checkbox {
     border-radius: var(--radius);
 }
 
-.c-custom-input-option__copy--radio {
+.c-custom-input-option__fake--radio {
     border-radius: 100%;
 }
 
@@ -857,13 +857,13 @@ more padding on the right to avoid overlap
     transition: all var(--transition-alpha);
 }
 
-.c-custom-input-option__copy--checkbox .c-custom-input-option__symbol {
+.c-custom-input-option__fake--checkbox .c-custom-input-option__symbol {
     width: 10px;
     height: 10px;
     fill: var(--custom-input-option-fill);
 }
 
-.c-custom-input-option__copy--radio .c-custom-input-option__symbol {
+.c-custom-input-option__fake--radio .c-custom-input-option__symbol {
     background-color: var(--custom-input-option-fill);
     border-radius: 100%;
     width: 6px;
@@ -872,14 +872,14 @@ more padding on the right to avoid overlap
 
 /* hover state */
 
-.c-custom-input-option:hover .c-custom-input-option__copy {
+.c-custom-input-option:hover .c-custom-input-option__fake {
     border-color: var(--input-border-color-hover);
 }
 
 /* focused and active state */
 
-.c-input-option--hidden:focus + .c-custom-input-option .c-custom-input-option__copy,
-.c-input-option--hidden:active + .c-custom-input-option .c-custom-input-option__copy {
+.c-input-option--hidden:focus + .c-custom-input-option .c-custom-input-option__fake,
+.c-input-option--hidden:active + .c-custom-input-option .c-custom-input-option__fake {
     border: 1px solid var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
 }
