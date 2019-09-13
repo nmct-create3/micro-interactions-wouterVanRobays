@@ -20,8 +20,6 @@
 
 :root {
     /* colors */
-    --color-alpha-xx-light: #DCEAFF;
-    --color-alpha-x-light: #81ADF0;
     --color-alpha-light: #4F95FF;
     --color-alpha: #3385FF;
     --color-alpha-dark: #2E77E6;
@@ -129,9 +127,6 @@
         --button-border-color: var(--color-alpha);
         --button-border-color-hover: var(--color-alpha-light);
         --button-border-color-active: var(--color-alpha-dark);
-        --button-background-color-hover: var(--color-alpha-light);
-        --button-background-color-focus: var(--button-background-color);
-        --button-background-color-active: var(--color-alpha-dark);
     }
 }
 
@@ -842,7 +837,7 @@ more padding on the right to avoid overlap
 
 .c-custom-option__symbol {
     display: block;
-    opacity: 0; /* Hide the svg initially */
+    opacity: 0; /* Hide the symbol initially */
     transform: scale(.5);
     transition: all var(--transition-alpha);
 }
@@ -877,7 +872,7 @@ more padding on the right to avoid overlap
 /* checked state */
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
-    opacity: 1; /* Show the svg when the invisible checkbox is checked */
+    opacity: 1; /* Show the symbol when the invisible checkbox/radio button is checked */
     transform: scale(1);
 }
 
