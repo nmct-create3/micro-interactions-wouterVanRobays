@@ -821,16 +821,12 @@ more padding on the right to avoid overlap
 /* Hide the actual input with the class .o-hide-accessible */
 
 .c-custom-input-option {
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
 }
 
 .c-custom-input-option__fake {
     display: flex;
-    -ms-align-items: center;
     align-items: center;
     justify-content: center;
     width: 16px;
