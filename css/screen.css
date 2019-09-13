@@ -42,7 +42,8 @@
     --radius: 3px;
 
     /* transitions */
-    --transition-alpha: .1s ease-in-out;
+    --transition-alpha: .1s ease-out;
+    --transition-beta: .15s ease-out;
 
     /* theme colors */
     --html-text-color: var(--color-neutral-xxxx-dark);
@@ -929,7 +930,7 @@ more padding on the right to avoid overlap
     border-radius: 22px;
     box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
     background-color: var(--toggle-switch-background-color);
-    transition: all var(--transition-alpha);
+    transition: all var(--transition-beta);
 }
 
 /* focused and active state */
@@ -938,6 +939,12 @@ more padding on the right to avoid overlap
 .c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input {
     border-color: var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
+}
+
+/* special active state */
+
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    width: 28px;
 }
 
 /* checked state */
@@ -952,9 +959,7 @@ more padding on the right to avoid overlap
     background-color: var(--toggle-switch-background-color-checked);
 }
 
-.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    width: 28px;
-}
+/* special active checked state */
 
 .c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
     margin-left: -6px;
