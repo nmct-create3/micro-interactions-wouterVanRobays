@@ -820,7 +820,7 @@ more padding on the right to avoid overlap
 
 /* Hide the actual input with the class .o-hide-accessible */
 
-.c-custom-input-option__label {
+.c-custom-input-option {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -839,7 +839,7 @@ more padding on the right to avoid overlap
     background: var(--input-background-color);
     border: 1px solid var(--input-border-color);
     box-shadow: var(--input-shadow);
-    transition: border var(--transition-alpha);
+    transition: all var(--transition-alpha);
 }
 
 .c-custom-input-option__copy--checkbox {
@@ -872,21 +872,21 @@ more padding on the right to avoid overlap
 
 /* hover state */
 
-.c-custom-input-option__label:hover .c-custom-input-option__copy {
+.c-custom-input-option:hover .c-custom-input-option__copy {
     border-color: var(--input-border-color-hover);
 }
 
 /* focused and active state */
 
-.c-custom-input-option__original:focus + .c-custom-input-option__label .c-custom-input-option__copy,
-.c-custom-input-option__original:active + .c-custom-input-option__label .c-custom-input-option__copy {
+.c-input-option--hidden:focus + .c-custom-input-option .c-custom-input-option__copy,
+.c-input-option--hidden:active + .c-custom-input-option .c-custom-input-option__copy {
     border: 1px solid var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
 
-.c-custom-input-option__original:checked + .c-custom-input-option__label .c-custom-input-option__symbol {
+.c-input-option--hidden:checked + .c-custom-input-option .c-custom-input-option__symbol {
     opacity: 1; /* Show the svg when the invisible checkbox is checked */
     transform: scale(1);
 }
