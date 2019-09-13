@@ -327,10 +327,7 @@ input::placeholder {
 
 .o-row--login {
     min-height: 100vh;
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
 }
 
@@ -409,8 +406,6 @@ input::placeholder {
 */
 
 .o-layout {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
 }
@@ -666,10 +661,7 @@ input::placeholder {
 */
 
 .c-form-field--option {
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
 }
 
@@ -907,16 +899,11 @@ more padding on the right to avoid overlap
 }
 
 .c-custom-toggle {
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
 }
 
 .c-custom-toggle--inverted {
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
@@ -1017,10 +1004,7 @@ more padding on the right to avoid overlap
 }
 
 .c-password-toggle__label {
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
     padding: 14px 16px;
 }
