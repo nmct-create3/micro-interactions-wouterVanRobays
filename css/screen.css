@@ -77,7 +77,7 @@
     --toggle-background-color-checked: var(--color-alpha);
     --toggle-border-color-checked: var(--color-alpha-dark);
     --toggle-switch-background-color: White;
-    --toggle-switch-background-color-checked: var(--toggle-switch-background-color-checked);
+    --toggle-switch-background-color-checked: var(--toggle-switch-background-color);
 
     --toggle-list-border-color: var(--color-neutral-xxx-light);
 
