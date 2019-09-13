@@ -72,6 +72,15 @@
 
     --custom-input-option-fill: var(--color-alpha);
 
+    --toggle-background-color: var(--color-neutral-xxxx-light);
+    --toggle-border-color: var(--color-neutral-xxx-light);
+    --toggle-background-color-checked: var(--color-alpha);
+    --toggle-border-color-checked: var(--color-alpha-dark);
+    --toggle-switch-background-color: White;
+    --toggle-switch-background-color-checked: var(--toggle-switch-background-color-checked);
+
+    --toggle-list-border-color: var(--color-neutral-xxx-light);
+
     --password-toggle-symbol-fill: var(--color-neutral-x-light);
 
     --button-border-color: var(--color-alpha-dark);
@@ -104,6 +113,15 @@
     --input-border-color-focus: var(--input-background-color);
     --input-text-color: var(--color-neutral-xxxx-light);
     --input-placeholder-color: var(--color-neutral-dark);
+    --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
+
+    --toggle-background-color: var(--color-neutral-xxxx-dark);
+    --toggle-border-color: var(--toggle-background-color);
+    --toggle-border-color-checked: var(--toggle-background-color-checked);
+    --toggle-switch-background-color: var(--color-neutral-dark);
+    --toggle-switch-background-color-checked: White;
+
+    --toggle-list-border-color: var(--color-neutral-xx-dark);
 
     --password-toggle-symbol-fill: var(--color-neutral-x-dark);
 
@@ -802,8 +820,7 @@ more padding on the right to avoid overlap
 
 /* Hide the actual input with the class .o-hide-accessible */
 
-/* the label is a separate component */
-.c-custom-input-option-label {
+.c-custom-input-option__label {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -811,7 +828,7 @@ more padding on the right to avoid overlap
     align-items: center;
 }
 
-.c-custom-input-option {
+.c-custom-input-option__copy {
     display: flex;
     -ms-align-items: center;
     align-items: center;
@@ -825,11 +842,11 @@ more padding on the right to avoid overlap
     transition: border var(--transition-alpha);
 }
 
-.c-custom-input-option--checkbox {
+.c-custom-input-option__copy--checkbox {
     border-radius: var(--radius);
 }
 
-.c-custom-input-option--radio {
+.c-custom-input-option__copy--radio {
     border-radius: 100%;
 }
 
@@ -840,13 +857,13 @@ more padding on the right to avoid overlap
     transition: all var(--transition-alpha);
 }
 
-.c-custom-input-option--checkbox .c-custom-input-option__symbol {
+.c-custom-input-option__copy--checkbox .c-custom-input-option__symbol {
     width: 10px;
     height: 10px;
     fill: var(--custom-input-option-fill);
 }
 
-.c-custom-input-option--radio .c-custom-input-option__symbol {
+.c-custom-input-option__copy--radio .c-custom-input-option__symbol {
     background-color: var(--custom-input-option-fill);
     border-radius: 100%;
     width: 6px;
@@ -855,21 +872,21 @@ more padding on the right to avoid overlap
 
 /* hover state */
 
-.c-custom-input-option-label:hover .c-custom-input-option {
+.c-custom-input-option__label:hover .c-custom-input-option__copy {
     border-color: var(--input-border-color-hover);
 }
 
 /* focused and active state */
 
-.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option,
-.c-custom-input-option-hidden:active + .c-custom-input-option-label .c-custom-input-option {
+.c-custom-input-option__original:focus + .c-custom-input-option__label .c-custom-input-option__copy,
+.c-custom-input-option__original:active + .c-custom-input-option__label .c-custom-input-option__copy {
     border: 1px solid var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
 
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
+.c-custom-input-option__original:checked + .c-custom-input-option__label .c-custom-input-option__symbol {
     opacity: 1; /* Show the svg when the invisible checkbox is checked */
     transform: scale(1);
 }
@@ -890,7 +907,7 @@ more padding on the right to avoid overlap
 
 .c-toggle-list__item + .c-toggle-list__item {
     padding-top: 12px;
-    border-top: 1px solid var(--color-neutral-xxx-light);
+    border-top: 1px solid var(--toggle-list-border-color);
 }
 
 .c-toggle__label {
@@ -913,9 +930,9 @@ more padding on the right to avoid overlap
     height: 24px;
     width: 48px;
     margin-right: 16px;
-    background-color: var(--color-neutral-xxxx-light);
+    background-color: var(--toggle-background-color);
     border-radius: 32px;
-    border: 1px solid var(--color-neutral-xxx-light);
+    border: 1px solid var(--toggle-border-color);
     transition: all var(--transition-alpha);
 }
 
@@ -931,7 +948,7 @@ more padding on the right to avoid overlap
     width: 22px;
     border-radius: 22px;
     box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
-    background-color: #fff;
+    background-color: var(--toggle-switch-background-color);
     transition: all var(--transition-alpha);
 }
 
@@ -939,19 +956,20 @@ more padding on the right to avoid overlap
 
 .c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
 .c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
-    border-color: var(--color-alpha-x-light);
-    box-shadow: var(--focus-shadow);
+    border-color: var(--input-border-color-focus);
+    box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
 
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
-    background-color: var(--color-alpha);
-    border-color: var(--color-alpha-dark);
+    background-color: var(--toggle-background-color-checked);
+    border-color: var(--toggle-border-color-checked);
 }
 
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
     transform: translate(24px,0);
+    background-color: var(--toggle-switch-background-color-checked);
 }
 
 .c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input::after {
