@@ -94,43 +94,45 @@
     --button-shadow-focus: var(--input-shadow-focus);
 }
 
-.is-dark {
-    --html-text-color: White;
-    --html-background-color: var(--color-neutral-xxxx-dark);
+@media (prefers-color-scheme: dark) {
+    :root {
+        --html-text-color: White;
+        --html-background-color: var(--color-neutral-xxxx-dark);
 
-    --logo-path-1-fill: White;
-    --logo-path-2-fill: var(--logo-path-1-fill);
-    --logo-path-3-fill: var(--logo-path-1-fill);
+        --logo-path-1-fill: White;
+        --logo-path-2-fill: var(--logo-path-1-fill);
+        --logo-path-3-fill: var(--logo-path-1-fill);
 
-    --card-background-color: var(--color-neutral-xxx-dark);
-    --card-footer-border-color: var(--color-neutral-xxxx-dark);
+        --card-background-color: var(--color-neutral-xxx-dark);
+        --card-footer-border-color: var(--color-neutral-xxxx-dark);
 
-    --label-text-color: var(--color-neutral-xx-light);
+        --label-text-color: var(--color-neutral-xx-light);
 
-    --input-background-color: var(--color-neutral-xxxx-dark);
-    --input-border-color: var(--input-background-color);
-    --input-border-color-hover: var(--input-background-color);
-    --input-border-color-focus: var(--input-background-color);
-    --input-text-color: var(--color-neutral-xxxx-light);
-    --input-placeholder-color: var(--color-neutral-dark);
-    --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
+        --input-background-color: var(--color-neutral-xxxx-dark);
+        --input-border-color: var(--input-background-color);
+        --input-border-color-hover: var(--input-background-color);
+        --input-border-color-focus: var(--input-background-color);
+        --input-text-color: var(--color-neutral-xxxx-light);
+        --input-placeholder-color: var(--color-neutral-dark);
+        --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
 
-    --toggle-background-color: var(--color-neutral-xxxx-dark);
-    --toggle-border-color: var(--toggle-background-color);
-    --toggle-border-color-checked: var(--toggle-background-color-checked);
-    --toggle-switch-background-color: var(--color-neutral-dark);
-    --toggle-switch-background-color-checked: White;
+        --toggle-background-color: var(--color-neutral-xxxx-dark);
+        --toggle-border-color: var(--toggle-background-color);
+        --toggle-border-color-checked: var(--toggle-background-color-checked);
+        --toggle-switch-background-color: var(--color-neutral-dark);
+        --toggle-switch-background-color-checked: White;
 
-    --toggle-list-border-color: var(--color-neutral-xx-dark);
+        --toggle-list-border-color: var(--color-neutral-xx-dark);
 
-    --password-toggle-symbol-fill: var(--color-neutral-x-dark);
+        --password-toggle-symbol-fill: var(--color-neutral-x-dark);
 
-    --button-border-color: var(--color-alpha);
-    --button-border-color-hover: var(--color-alpha-light);
-    --button-border-color-active: var(--color-alpha-dark);
-    --button-background-color-hover: var(--color-alpha-light);
-    --button-background-color-focus: var(--button-background-color);
-    --button-background-color-active: var(--color-alpha-dark);
+        --button-border-color: var(--color-alpha);
+        --button-border-color-hover: var(--color-alpha-light);
+        --button-border-color-active: var(--color-alpha-dark);
+        --button-background-color-hover: var(--color-alpha-light);
+        --button-background-color-focus: var(--button-background-color);
+        --button-background-color-active: var(--color-alpha-dark);
+    }
 }
 
 /*------------------------------------*\
