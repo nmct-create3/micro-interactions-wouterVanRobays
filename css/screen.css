@@ -64,7 +64,7 @@
     --input-border-color-hover: var(--color-neutral-xx-light);
     --input-border-color-focus: var(--color-alpha);
     --input-text-color: var(--color-neutral-xxxx-dark);
-    --input-shadow: inset 0 1px 1px #20223A15;
+    --input-shadow: 0;
     --input-shadow-focus: 0 0 0 3px #3385ff4d;
     --input-error-border-color: var(--color-error);
     --input-error-shadow-focus: 0 0 0 3px #FF33334d;
