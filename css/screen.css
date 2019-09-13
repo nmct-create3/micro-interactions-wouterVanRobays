@@ -730,7 +730,7 @@ more padding on the right to avoid overlap
 
 /* option input for checkboxes and radio buttons */
 
-.c-input-option {
+.c-option {
     margin-right: 8px;
 }
 
@@ -820,12 +820,12 @@ more padding on the right to avoid overlap
 
 /* Hide the actual input with the class .o-hide-accessible */
 
-.c-custom-input-option {
+.c-custom-option {
     display: flex;
     align-items: center;
 }
 
-.c-custom-input-option__fake {
+.c-custom-option__fake-input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -838,28 +838,28 @@ more padding on the right to avoid overlap
     transition: all var(--transition-alpha);
 }
 
-.c-custom-input-option__fake--checkbox {
+.c-custom-option__fake-input--checkbox {
     border-radius: var(--radius);
 }
 
-.c-custom-input-option__fake--radio {
+.c-custom-option__fake-input--radio {
     border-radius: 100%;
 }
 
-.c-custom-input-option__symbol {
+.c-custom-option__symbol {
     display: block;
     opacity: 0; /* Hide the svg initially */
     transform: scale(.5);
     transition: all var(--transition-alpha);
 }
 
-.c-custom-input-option__fake--checkbox .c-custom-input-option__symbol {
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
     width: 10px;
     height: 10px;
     fill: var(--custom-input-option-fill);
 }
 
-.c-custom-input-option__fake--radio .c-custom-input-option__symbol {
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
     background-color: var(--custom-input-option-fill);
     border-radius: 100%;
     width: 6px;
@@ -868,21 +868,21 @@ more padding on the right to avoid overlap
 
 /* hover state */
 
-.c-custom-input-option:hover .c-custom-input-option__fake {
+.c-custom-option:hover .c-custom-option__fake-input {
     border-color: var(--input-border-color-hover);
 }
 
 /* focused and active state */
 
-.c-input-option--hidden:focus + .c-custom-input-option .c-custom-input-option__fake,
-.c-input-option--hidden:active + .c-custom-input-option .c-custom-input-option__fake {
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input,
+.c-option--hidden:active + .c-custom-option .c-custom-option__fake-input {
     border: 1px solid var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
 
-.c-input-option--hidden:checked + .c-custom-input-option .c-custom-input-option__symbol {
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     opacity: 1; /* Show the svg when the invisible checkbox is checked */
     transform: scale(1);
 }
@@ -893,20 +893,20 @@ more padding on the right to avoid overlap
     Visually change a checkbox into a toggle
 */
 
-.c-toggle-list {
+.c-custom-toggle-list {
     margin-bottom: 24px;
 }
 
-.c-toggle-list__item {
+.c-custom-toggle-list__item {
     margin-bottom: 12px;
 }
 
-.c-toggle-list__item + .c-toggle-list__item {
+.c-custom-toggle-list__item + .c-custom-toggle-list__item {
     padding-top: 12px;
     border-top: 1px solid var(--toggle-list-border-color);
 }
 
-.c-toggle__label {
+.c-custom-toggle {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -914,14 +914,14 @@ more padding on the right to avoid overlap
     align-items: center;
 }
 
-.c-toggle__label--inverted {
+.c-custom-toggle--inverted {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.c-toggle__input {
+.c-custom-toggle__fake-input {
     display: block;
     height: 24px;
     width: 48px;
@@ -932,11 +932,11 @@ more padding on the right to avoid overlap
     transition: all var(--transition-alpha);
 }
 
-.c-toggle__label--inverted .c-toggle__input {
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
     margin-right: 0;
 }
 
-.c-toggle__input::after {
+.c-custom-toggle__fake-input::after {
     position: relative;
     display: block;
     content: '';
@@ -950,98 +950,30 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
+.c-option--hidden:focus + .c-custom-toggle .c-custom-toggle__fake-input,
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input {
     border-color: var(--input-border-color-focus);
     box-shadow: var(--input-shadow-focus);
 }
 
 /* checked state */
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input {
     background-color: var(--toggle-background-color-checked);
     border-color: var(--toggle-border-color-checked);
 }
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
     transform: translate(24px,0);
     background-color: var(--toggle-switch-background-color-checked);
 }
 
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input::after {
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
     width: 28px;
 }
 
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input::after {
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
     margin-left: -6px;
-}
-
-/* alternative design */
-
-.c-toggle__input--alternative {
-    height: 20px;
-    width: 40px;
-    background-color: var(--color-neutral-xxx-light);
-    border-color: white;
-}
-
-.c-toggle__input--alternative::after {
-    transform: translate(-2px,-2px);
-    border: 1px solid white;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easOutBack to make it wobble even more */
-    transition-duration: .2s;
-}
-
-/* focused and active state */
-
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative {
-    border-color: white;
-    box-shadow: none;
-}
-
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
-    width: 22px;
-}
-
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
-    margin-left: 0;
-}
-
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
-    border-color: var(--color-alpha-x-light);
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2), 0 0 0 3px var(--focus-shadow-color);
-}
-
-/* Make it wobble */
-
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
-    transform: translate(-2px,-2px) scaleY(.9);
-}
-
-/* checked state */
-
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
-    background-color: var(--color-alpha-xx-light);
-    border-color: white;
-}
-
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative::after {
-    transform: translate(18px,-2px);
-    background-color: var(--color-alpha);
-    border-color: var(--color-alpha);
-}
-
-.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
-    border-color: var(--color-alpha-dark);
-}
-
-/* Make it wobble */
-
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
-    transform: translate(18px,-2px) scaleY(.9);
 }
 
 /*
