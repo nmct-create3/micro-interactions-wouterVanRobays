@@ -24,6 +24,8 @@
     --color-alpha: #3385FF;
     --color-alpha-dark: #2E77E6;
     --color-alpha-x-dark: #1B4186;
+    --color-alpha-transparent: #3385ffbf;
+    --color-alpha-x-transparent: #3385ff4d;
     --color-neutral-xxxx-light: #F5F6FA;
     --color-neutral-xxx-light: #E2E3E7;
     --color-neutral-xx-light: #caccd4;
@@ -35,8 +37,9 @@
     --color-neutral-xx-dark: #4b4c60;
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
-
     --color-error: #FF3333;
+    --color-error-transparent: #FF3333bf;
+    --color-error-x-transparent: #FF33334d;
 
     /* border radius */
     --radius: 3px;
@@ -59,15 +62,15 @@
     --label-text-color: var(--color-neutral-xx-dark);
 
     --input-background-color: White;
+    --input-text-color: var(--color-neutral-xxxx-dark);
+    --input-placeholder-color: var(--color-neutral-x-light);
     --input-border-color: var(--color-neutral-xxx-light);
     --input-border-color-hover: var(--color-neutral-xx-light);
     --input-border-color-focus: var(--color-alpha);
-    --input-text-color: var(--color-neutral-xxxx-dark);
-    --input-shadow: 0;
-    --input-shadow-focus: 0 0 0 3px #3385ff4d;
     --input-error-border-color: var(--color-error);
-    --input-error-shadow-focus: 0 0 0 3px #FF33334d;
-    --input-placeholder-color: var(--color-neutral-x-light);
+    --input-outline-spread: 0 0 0 3px;
+    --input-outline-color: var(--color-alpha-x-transparent);
+    --input-error-outline-color: var(--color-error-x-transparent);
 
     --custom-input-option-fill: var(--color-alpha);
 
@@ -90,7 +93,7 @@
     --button-background-color-hover: var(--color-alpha-light);
     --button-background-color-focus: var(--button-background-color);
     --button-background-color-active: var(--color-alpha-dark);
-    --button-shadow-focus: var(--input-shadow-focus);
+    --button-outline: 0 0 0 1px White, var(--input-outline-spread) var(--input-outline-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -113,7 +116,8 @@
         --input-border-color-focus: var(--input-background-color);
         --input-text-color: var(--color-neutral-xxxx-light);
         --input-placeholder-color: var(--color-neutral-dark);
-        --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
+        --input-outline-color: var(--color-alpha-transparent);
+        --input-error-outline-color: var(--color-error-transparent);
 
         --toggle-background-color: var(--color-neutral-xxxx-dark);
         --toggle-border-color: var(--toggle-background-color);
@@ -128,6 +132,7 @@
         --button-border-color: var(--color-alpha);
         --button-border-color-hover: var(--color-alpha-light);
         --button-border-color-active: var(--color-alpha-dark);
+        --button-outline: 0 0 0 1px var(--color-neutral-xxxx-dark), var(--input-outline-spread) var(--input-outline-color);
     }
 }
 
@@ -683,8 +688,7 @@ input::placeholder {
     line-height: 24px;
     padding: 11px 16px;
     outline: none;
-    box-shadow: var(--input-shadow);
-    transition: border var(--transition-alpha);
+    transition: all var(--transition-alpha);
 }
 
 .c-input:hover {
@@ -694,19 +698,8 @@ input::placeholder {
 .c-input:focus,
 .c-input:active {
     border-color: var(--input-border-color-focus);
-    box-shadow: var(--input-shadow-focus);
-}
-
-.c-input--error,
-.c-input--error:hover,
-.c-input--error:focus,
-.c-input--error:active {
-    border-color: var(--input-error-border-color);
-}
-
-.c-input--error:focus,
-.c-input--error:active {
-    box-shadow: var(--input-error-shadow-focus);
+    /* box-shadow: var(--input-outline); */
+    box-shadow: var(--input-outline-spread) var(--input-outline-color);
 }
 
 /*
@@ -736,10 +729,6 @@ more padding on the right to avoid overlap
     font-size: 14px;
     line-height: 16px;
     color: var(--label-text-color);
-}
-
-.c-label--error {
-    color: var(--color-error);
 }
 
 .c-label--option {
@@ -779,7 +768,7 @@ more padding on the right to avoid overlap
 .c-button:focus {
     background-color: var(--button-background-color-focus);
     border-color: var(--button-border-color-focus);
-    box-shadow: var(--button-shadow-focus);
+    box-shadow: var(--button-outline);
 }
 
 .c-button:active {
@@ -824,7 +813,6 @@ more padding on the right to avoid overlap
     margin-right: 8px;
     background: var(--input-background-color);
     border: 1px solid var(--input-border-color);
-    box-shadow: var(--input-shadow);
     transition: all var(--transition-alpha);
 }
 
@@ -867,7 +855,8 @@ more padding on the right to avoid overlap
 .c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input,
 .c-option--hidden:active + .c-custom-option .c-custom-option__fake-input {
     border: 1px solid var(--input-border-color-focus);
-    box-shadow: var(--input-shadow-focus);
+    /* box-shadow: var(--input-outline); */
+    box-shadow: var(--input-outline-spread) var(--input-outline-color);
 }
 
 /* checked state */
@@ -938,7 +927,8 @@ more padding on the right to avoid overlap
 .c-option--hidden:focus + .c-custom-toggle .c-custom-toggle__fake-input,
 .c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input {
     border-color: var(--input-border-color-focus);
-    box-shadow: var(--input-shadow-focus);
+    /* box-shadow: var(--input-outline); */
+    box-shadow: var(--input-outline-spread) var(--input-outline-color);
 }
 
 /* special active state */
@@ -1028,6 +1018,44 @@ more padding on the right to avoid overlap
 
 .c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
     display: none;
+}
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    States: error
+    ---
+    State class to specify error colors
+*/
+
+/* instead of this: */
+
+/* .has-error .c-input,
+.has-error .c-input:hover,
+.has-error .c-input:focus,
+.has-error .c-input:active {
+    border-color: var(--input-error-border-color);
+}
+
+.has-error .c-input:focus,
+.has-error .c-input:active {
+    box-shadow: var(--input-error-outline);
+}
+
+.has-error .c-label {
+    color: var(--color-error);
+} */
+
+/* we can write this: */
+
+.has-error {
+    --label-text-color: var(--color-error);
+    --input-border-color: var(--input-error-border-color);
+    --input-border-color-hover: var(--input-border-color);
+    --input-border-color-focus: var(--input-border-color);
+    --input-outline-color: var(--input-error-outline-color);
 }
 
 /*------------------------------------*\
