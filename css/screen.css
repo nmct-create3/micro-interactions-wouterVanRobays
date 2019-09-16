@@ -698,8 +698,14 @@ input::placeholder {
 .c-input:focus,
 .c-input:active {
     border-color: var(--input-border-color-focus);
-    /* box-shadow: var(--input-outline); */
     box-shadow: var(--input-outline-spread) var(--input-outline-color);
+}
+
+.c-input--error {
+    --input-border-color: var(--input-error-border-color);
+    --input-border-color-hover: var(--input-border-color);
+    --input-border-color-focus: var(--input-border-color);
+    --input-outline-color: var(--input-error-outline-color);
 }
 
 /*
@@ -743,6 +749,10 @@ more padding on the right to avoid overlap
 
 .c-label__error-message.is-visible {
 	display: block;
+}
+
+.c-label--error {
+    --label-text-color: var(--color-error);
 }
 
 /*
@@ -1023,44 +1033,6 @@ more padding on the right to avoid overlap
 
 .c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
     display: none;
-}
-
-/*------------------------------------*\
-#STATES
-\*------------------------------------*/
-
-/*
-    States: error
-    ---
-    State class to specify error colors
-*/
-
-/* instead of this: */
-
-/* .has-error .c-input,
-.has-error .c-input:hover,
-.has-error .c-input:focus,
-.has-error .c-input:active {
-    border-color: var(--input-error-border-color);
-}
-
-.has-error .c-input:focus,
-.has-error .c-input:active {
-    box-shadow: var(--input-error-outline);
-}
-
-.has-error .c-label {
-    color: var(--color-error);
-} */
-
-/* we can write this: */
-
-.has-error {
-    --label-text-color: var(--color-error);
-    --input-border-color: var(--input-error-border-color);
-    --input-border-color-hover: var(--input-border-color);
-    --input-border-color-focus: var(--input-border-color);
-    --input-outline-color: var(--input-error-outline-color);
 }
 
 /*------------------------------------*\
