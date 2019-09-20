@@ -45,7 +45,7 @@
     /* global page settings */
     --global-html-color: var(--global-color-neutral-xxxx-dark);
     --global-html-backgroundColor: var(--global-color-neutral-xxxx-light);
-    --global-selection-backgroundColor: var(--global-color-alpha);
+    --global-selection-backgroundColor: var(--global-color-alpha);    
 
     /* border radius */
     --global-borderRadius: 3px;
@@ -230,13 +230,13 @@ hr {
     margin: 0 0 24px;
 }
 
-a {
-    --link-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+a {    
     --link-color: var(--global-color-alpha);
     --link-visited-color: var(--global-color-alpha);
     --link-active-color: var(--global-color-alpha-dark);
     --link-focus-color: var(--global-color-alpha);
     --link-hover-color: var(--global-color-alpha-light);
+    --link-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     transition: var(--link-transition);
     color: var(--link-color);
     outline-color: var(--link-boxShadowColor);
@@ -609,7 +609,7 @@ input::placeholder {
     overflow: auto; /* Fix margin collapse */
 }
 
-.c-card__footer {
+.c-card__footer {   
     text-align: center;
     border-top: 1px solid var(--card__footer-borderColor);
 }
@@ -683,13 +683,13 @@ input::placeholder {
 }
 
 .c-input:hover {
-    --input-borderColor: var(--input-hover-borderColor);
+    border-color: var(--input-hover-borderColor);
 }
 
 .c-input:focus,
 .c-input:active {
-    --input-borderColor: var(--input-focus-borderColor);
-    --input-boxShadow: var(--input-focus-boxShadow);
+    border-color: var(--input-focus-borderColor);
+    box-shadow: var(--input-focus-boxShadow);
 }
 
 .c-input--error {
@@ -759,16 +759,16 @@ more padding on the right to avoid overlap
     Class to put on form buttons or
 */
 
-.c-button {
+.c-button {    
     --button-borderColor: var(--global-color-alpha-dark);
     --button-hover-borderColor: var(--global-color-alpha-dark);
     --button-active-borderColor: var(--global-color-alpha-dark);
     --button-focus-borderColor:var(--global-color-alpha-dark);
     --button-backgroundColor: var(--global-color-alpha);
     --button-hover-backgroundColor: var(--global-color-alpha-light);
-    --button-focus-backgroundColor: var(--global-color-alpha);
     --button-active-backgroundColor: var(--global-color-alpha-dark);
-    --button-focus-boxShadow: 0 0 0 1px White, var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+    --button-focus-backgroundColor: var(--global-color-alpha);    
+    --button-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
     font-size: 16px;
     font-weight: 600;
     border-radius: var(--global-borderRadius);
@@ -784,20 +784,20 @@ more padding on the right to avoid overlap
 }
 
 .c-button:hover {
-    --button-borderColor: var(--button-hover-borderColor);
-    --button-backgroundColor: var(--button-hover-backgroundColor);
+    border-color: var(--button-hover-borderColor);
+    background-color: var(--button-hover-backgroundColor);
 }
 
 .c-button:focus {
-    --button-backgroundColor: var(--button-focus-backgroundColor);
-    --button-borderColor: var(--button-focus-borderColor);
-    --button-boxShadow: var(--button-focus-boxShadow);
+    background-color: var(--button-focus-backgroundColor);
+    border-color: var(--button-focus-borderColor);
+    box-shadow: var(--button-focus-boxShadow);
 }
 
 .c-button:active {
-    --button-backgroundColor: var(--button-active-backgroundColor);
-    --button-borderColor: var(--button-active-borderColor);
-    --button-boxShadow: 0;
+    background-color: var(--button-active-backgroundColor);
+    border-color: var(--button-active-borderColor);
+    box-shadow: var(--button-active-boxShadow, 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -805,8 +805,7 @@ more padding on the right to avoid overlap
         --button-borderColor: var(--global-color-alpha);
         --button-hover-borderColor: var(--global-color-alpha-light);
         --button-active-borderColor: var(--global-color-alpha-dark);
-        --button-focus-borderColor: var(--global-color-alpha);
-        --button-focus-boxShadow: 0 0 0 1px var(--global-color-neutral-xxxx-dark), var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+        --button-focus-borderColor: var(--global-color-alpha-x-dark);
     }
 }
 
