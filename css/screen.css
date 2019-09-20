@@ -55,6 +55,7 @@
     --global-transitionTiming-alpha: .1s;
 
     /* forms */
+    --global-label-color: var(--global-color-neutral-xx-dark));
     --global-placeholder-color: var(--global-color-neutral-x-light);
     --global-input-backgroundColor: White;
     --global-input-color: var(--global-color-neutral-xxxx-dark);
@@ -72,7 +73,7 @@
         --global-html-color: White;
         --global-html-backgroundColor: var(--global-color-neutral-xxxx-dark);
 
-        --global-label-color: var(--global-color-neutral-xx-light);
+        --global-label-color: var(--global-color-neutral-xx-light);    
         --global-placeholder-color: var(--global-color-neutral-dark);
         --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
         --global-input-color: var(--global-color-neutral-xxxx-light);
@@ -253,6 +254,10 @@ a:active {
 
 a:focus {
     color: var(--link-focus-color, var(--global-color-alpha));
+}
+
+label {
+    color: var(--label-color, var(--global-label-color));
 }
 
 label,
@@ -584,10 +589,8 @@ input::placeholder {
 */
 
 .c-card {
-    --card-backgroundColor: White;
-    --card__footer-borderColor: var(--global-color-neutral-xxx-light);
     --card-borderRadius: var(--global-borderRadius);
-    background-color: var(--card-backgroundColor);
+    background-color: var(--card-backgroundColor, White);
     margin-bottom: 24px;
     border-radius: var(--card-borderRadius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -603,7 +606,7 @@ input::placeholder {
 
 .c-card__footer {   
     text-align: center;
-    border-top: 1px solid var(--card__footer-borderColor);
+    border-top: 1px solid var(--card__footer-borderColor, var(--global-color-neutral-xxx-light));
 }
 
 .c-card__title {
@@ -648,22 +651,15 @@ input::placeholder {
 */
 
 .c-input {
-    --input-backgroundColor: var(--global-input-backgroundColor);
-    --input-color: var(--global-input-color);
     --input-borderRadius: var(--global-borderRadius);
-    --input-borderColor: var(--global-input-borderColor);
-    --input-hover-borderColor: var(--global-input-hover-borderColor);
-    --input-focus-borderColor: var(--global-input-focus-borderColor);
-    --input-boxShadowColor: var(--global-input-boxShadowColor);
-    --input-focus-boxShadow: var(--global-input-boxShadowSpread) var(--input-boxShadowColor);
     --input-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: 1px solid var(--input-borderColor);
     border-radius: var(--input-borderRadius);
-    background-color: var(--input-backgroundColor);
+    border: 1px solid var(--input-borderColor, var(--global-input-borderColor));    
+    background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
     color: var(--input-color);
     font-family: inherit;
     font-size: 16px;
@@ -671,25 +667,25 @@ input::placeholder {
     padding: 11px 16px;
     outline: none;
     transition: var(--input-transition);
-    box-shadow: var(--input-boxShadow, 0);
 }
 
 .c-input:hover {
-    border-color: var(--input-hover-borderColor);
+    border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
 }
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--input-focus-borderColor);
-    box-shadow: var(--input-focus-boxShadow);
+    border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
+    /* box-shadow: var(--input-focus-boxShadow); */
+    box-shadow: var(--global-input-boxShadowSpread) var(--input-boxShadowColor, var(--global-input-boxShadowColor));
 }
 
-.c-input--error {
+/* .c-input--error {
     --input-borderColor: var(--global-input-error-borderColor);
     --input-hover-borderColor: var(--global-input-error-borderColor);
     --input-focus-borderColor: var(--global-input-error-borderColor);
     --input-boxShadowColor: var(--global-input-error-boxShadowColor);
-}
+} */
 
 /*
 Input password with toggle checkbox on top of it needs
@@ -713,12 +709,10 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-    --label-color: var(--global-color-neutral-xx-dark);
     margin-bottom: 0;
     padding-bottom: 8px;
     font-size: 14px;
-    line-height: 16px;
-    color: var(--label-color);
+    line-height: 16px;    
 }
 
 .c-label--option {
@@ -735,15 +729,9 @@ more padding on the right to avoid overlap
 	display: block;
 }
 
-.c-label--error {
+/* .c-label--error {
     --label-color: var(--global-color-error);
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-label {      
-        --label-color: var(--global-color-neutral-xx-light);    
-    }
-}
+} */
 
 /*
     Component: Button
@@ -752,20 +740,12 @@ more padding on the right to avoid overlap
 */
 
 .c-button {    
-    --button-borderColor: var(--global-color-alpha-dark);
-    --button-hover-borderColor: var(--global-color-alpha-dark);
-    --button-active-borderColor: var(--global-color-alpha-dark);
-    --button-focus-borderColor:var(--global-color-alpha-dark);
-    --button-backgroundColor: var(--global-color-alpha);
-    --button-hover-backgroundColor: var(--global-color-alpha-light);
-    --button-active-backgroundColor: var(--global-color-alpha-dark);
-    --button-focus-backgroundColor: var(--global-color-alpha);    
-    --button-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+    --button-borderRadius: var(--global-borderRadius);
     font-size: 16px;
     font-weight: 600;
-    border-radius: var(--global-borderRadius);
-    border: 1px solid var(--button-borderColor);
-    background-color: var(--button-backgroundColor);
+    border-radius: var(--button-borderRadius);
+    border: 1px solid var(--button-borderColor, var(--global-color-alpha-dark));
+    background-color: var(--button-backgroundColor, var(--global-color-alpha));
     color: #fff;
     padding: 11px 16px;
     line-height: 24px;
@@ -776,19 +756,19 @@ more padding on the right to avoid overlap
 }
 
 .c-button:hover {
-    border-color: var(--button-hover-borderColor);
-    background-color: var(--button-hover-backgroundColor);
+    border-color: var(--button-hover-borderColor, var(--global-color-alpha-dark));
+    background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
 }
 
 .c-button:focus {
-    background-color: var(--button-focus-backgroundColor);
-    border-color: var(--button-focus-borderColor);
-    box-shadow: var(--button-focus-boxShadow);
+    background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
+    border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
+    box-shadow: var(--global-input-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-boxShadowColor));
 }
 
 .c-button:active {
-    background-color: var(--button-active-backgroundColor);
-    border-color: var(--button-active-borderColor);
+    background-color: var(--button-active-backgroundColor, var(--global-color-alpha-dark));
+    border-color: var(--button-active-borderColor, var(--global-color-alpha-dark));
     box-shadow: var(--button-active-boxShadow, 0);
 }
 
@@ -1081,6 +1061,18 @@ more padding on the right to avoid overlap
     .c-password-toggle {
         --password-toggle__symbol-Fill: var(--global-color-neutral-x-dark);
     }
+}
+
+/*------------------------------------*\
+#States
+\*------------------------------------*/
+
+.has-error {
+    --label-color: var(--global-color-error);
+    --input-borderColor: var(--global-input-error-borderColor);
+    --input-hover-borderColor: var(--global-input-error-borderColor);
+    --input-focus-borderColor: var(--global-input-error-borderColor);
+    --input-boxShadowColor: var(--global-input-error-boxShadowColor);
 }
 
 /*------------------------------------*\
