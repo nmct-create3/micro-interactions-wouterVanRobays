@@ -55,7 +55,6 @@
     --global-transitionTiming-alpha: .1s;
 
     /* forms */
-    --global-label-color: var(--global-color-neutral-xx-dark);
     --global-placeholder-color: var(--global-color-neutral-x-light);
     --global-input-backgroundColor: White;
     --global-input-color: var(--global-color-neutral-xxxx-dark);
@@ -722,7 +721,7 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-    --label-color: var(--global-label-color);
+    --label-color: var(--global-color-neutral-xx-dark);
     margin-bottom: 0;
     padding-bottom: 8px;
     font-size: 14px;
@@ -746,6 +745,12 @@ more padding on the right to avoid overlap
 
 .c-label--error {
     --label-color: var(--global-color-error);
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-label {      
+        --label-color: var(--global-color-neutral-xx-light);    
+    }
 }
 
 /*
