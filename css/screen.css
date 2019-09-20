@@ -51,8 +51,8 @@
     --global-borderRadius: 3px;
 
     /* transitions */
-    --global-transitionTiming-alpha: .1s ease-out;
-    --global-transitionTiming-beta: .15s ease-out;
+    --global-transitionEasing-out: ease-out;
+    --global-transitionTiming-alpha: .1s;
 
     /* forms */
     --global-label-color: var(--global-color-neutral-xx-dark);
@@ -232,7 +232,7 @@ hr {
 }
 
 a {
-    --link-transition: all var(--global-transitionTiming-alpha);
+    --link-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     --link-color: var(--global-color-alpha);
     --link-visited-color: var(--global-color-alpha);
     --link-active-color: var(--global-color-alpha-dark);
@@ -665,7 +665,7 @@ input::placeholder {
     --input-focus-borderColor: var(--global-input-focus-borderColor);
     --input-boxShadowColor: var(--global-input-boxShadowColor);
     --input-focus-boxShadow: var(--global-input-boxShadowSpread) var(--input-boxShadowColor);
-    --input-transition: all var(--global-transitionTiming-alpha);
+    --input-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -775,7 +775,7 @@ more padding on the right to avoid overlap
     width: 100%;
     outline: none;
     box-shadow: var(--button-boxShadow, 0);
-    transition: all var(--global-transitionTiming-alpha);
+    transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
 }
 
 .c-button:hover {
@@ -836,7 +836,7 @@ more padding on the right to avoid overlap
     --custom-option-boxShadowColor: var(--global-input-boxShadowColor);
     --custom-option-focus-boxShadow: var(--global-input-boxShadowSpread) var(--custom-option-boxShadowColor);
     --custom-option__symbol-Fill: var(--global-color-alpha);
-    --custom-option-transition: all var(--global-transitionTiming-alpha);
+    --custom-option-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     display: flex;
     align-items: center;
 }
@@ -930,10 +930,10 @@ more padding on the right to avoid overlap
     --toggle-checked-borderColor: var(--global-color-alpha-dark);
     --toggle-checked-backgroundColor: var(--global-color-alpha);
     --toggle-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
-    --toggle-transition: all var(--global-transitionTiming-beta);
+    --toggle-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     --toggle__switch-backgroundColor: White;
     --toggle__switch-checked-backgroundColor: White;
-    --toggle__switch-transition: all var(--global-transitionTiming-alpha);
+    --toggle__switch-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     display: flex;
     align-items: center;
 }
