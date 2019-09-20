@@ -46,11 +46,6 @@
     --global-html-color: var(--global-color-neutral-xxxx-dark);
     --global-html-backgroundColor: var(--global-color-neutral-xxxx-light);
     --global-selection-backgroundColor: var(--global-color-alpha);
-    --global-link-color: var(--global-color-alpha);
-    --global-link-visited-color: var(--global-color-alpha);
-    --global-link-active-color: var(--global-color-alpha-dark);
-    --global-link-focus-color: var(--global-color-alpha);
-    --global-link-hover-color: var(--global-color-alpha-light);
 
     /* border radius */
     --global-borderRadius: 3px;
@@ -238,27 +233,32 @@ hr {
 
 a {
     --link-transition: all var(--global-transitionTiming-alpha);
+    --link-color: var(--global-color-alpha);
+    --link-visited-color: var(--global-color-alpha);
+    --link-active-color: var(--global-color-alpha-dark);
+    --link-focus-color: var(--global-color-alpha);
+    --link-hover-color: var(--global-color-alpha-light);
     transition: var(--link-transition);
-    color: var(--global-link-color);
-    outline-color: var(--global-link-boxShadowColor);
+    color: var(--link-color);
+    outline-color: var(--link-boxShadowColor);
     outline-width: medium;
     outline-offset: 2px;
 }
 
 a:visited {
-    color: var(--global-link-visited-color);
+    color: var(--link-visited-color);
 }
 
 a:hover {
-    color: var(--global-link-hover-color);
+    color: var(--link-hover-color);
 }
 
 a:active {
-    color: var(--global-link-active-color);
+    color: var(--link-active-color);
 }
 
 a:focus {
-    color: var(--global-link-focus-color);
+    color: var(--link-focus-color);
 }
 
 label,
