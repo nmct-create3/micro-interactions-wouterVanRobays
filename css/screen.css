@@ -346,33 +346,6 @@ input::placeholder {
 }
 
 /*
-    Objects: section
-    ---
-    Creates vertical whitespace between adjacent sections inside a row
-*/
-
-.o-section {
-    position: relative;
-}
-
-.o-section + .o-section {
-    padding-top: 24px;
-}
-
-@media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
-        padding-top: 48px;
-    }
-}
-
-@media (min-width: 992px) {
-    .o-section--xl + .o-section--xl {
-        padding-top: 72px;
-    }
-}
-
-/*
     Objects: Row
     ---
     Creates a horizontal row that stretches the viewport and adds padding around children
