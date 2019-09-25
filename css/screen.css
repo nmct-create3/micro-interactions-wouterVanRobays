@@ -676,8 +676,12 @@ input::placeholder {
     font-weight: 600;
 }
 
+/* This allows c-card__body and __footer to have equal padding everywhere */
+
 .c-card__body > *:last-child,
-.c-card__footer > *:last-child {
+.c-card__footer > *:last-child,
+.c-card__body > *:last-child > *:last-child,
+.c-card__footer > *:last-child > *:last-child {
     margin-bottom: 0;
 }
 
