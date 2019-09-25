@@ -847,11 +847,11 @@ more padding on the right to avoid overlap
 */
 
 .c-option-list {
-    margin-bottom: 24px;
+    margin-bottom: var(--global-whitespace-lg);
 }
 
 .c-option-list__item {
-    margin-bottom: 12px;
+    margin-bottom: calc(var(--global-baseline) * 1.5);
 }
 
 /*
