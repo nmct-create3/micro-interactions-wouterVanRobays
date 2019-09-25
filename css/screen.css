@@ -43,9 +43,9 @@
     --global-color-error-x-transparent: #FF33334d;
 
     /* global page settings */
-    --global-html-color: var(--global-color-neutral-xxxx-dark);
-    --global-html-backgroundColor: var(--global-color-neutral-xxxx-light);
-    --global-selection-backgroundColor: var(--global-color-alpha);    
+    --global-page-color: var(--global-color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-selection-backgroundColor: var(--global-color-alpha);
 
     /* border radius */
     --global-borderRadius: 3px;
@@ -55,7 +55,7 @@
     --global-transitionTiming-alpha: .1s;
 
     /* forms */
-    --global-label-color: var(--global-color-neutral-xx-dark));
+    --global-label-color: var(--global-color-neutral-xx-dark);
     --global-placeholder-color: var(--global-color-neutral-x-light);
     --global-input-backgroundColor: White;
     --global-input-color: var(--global-color-neutral-xxxx-dark);
@@ -70,10 +70,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --global-html-color: White;
-        --global-html-backgroundColor: var(--global-color-neutral-xxxx-dark);
+        --global-page-color: White;
+        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
 
-        --global-label-color: var(--global-color-neutral-xx-light);    
+        --global-label-color: var(--global-color-neutral-xx-light);
         --global-placeholder-color: var(--global-color-neutral-dark);
         --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
         --global-input-color: var(--global-color-neutral-xxxx-light);
@@ -96,8 +96,8 @@
 */
 
 html {
-    background-color: var(--global-html-backgroundColor);
-    color: var(--global-html-color);
+    background-color: var(--global-page-backgroundColor);
+    color: var(--global-page-color);
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
@@ -231,7 +231,7 @@ hr {
     margin: 0 0 24px;
 }
 
-a {    
+a {
     --link-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     transition: var(--link-transition);
     color: var(--link-color, var(--global-color-alpha));
@@ -550,7 +550,7 @@ input::placeholder {
     Website main logo
 */
 
-.c-logo {    
+.c-logo {
     height: 24px;
     display: flex;
     align-items: center;
@@ -563,22 +563,22 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--logo__path--1--Fill, var(--global-color-neutral-xxxx-dark));
+    fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
 }
 
 .c-logo__path--2 {
-    fill: var(--logo__path--2--Fill, var(--global-color-alpha));
+    fill: var(--logo__path--2--fill, var(--global-color-alpha));
 }
 
 .c-logo__path--3 {
-    fill: var(--logo__path--3--Fill, var(--global-color-alpha-x-dark));
+    fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
 }
 
 @media (prefers-color-scheme: dark) {
     .c-logo {
-        --logo__path--1--Fill: White;
-        --logo__path--2--Fill: var(--logo__path--1--Fill);
-        --logo__path--3--Fill: var(--logo__path--1--Fill);
+        --logo__path--1--fill: White;
+        --logo__path--2--fill: var(--logo__path--1--fill);
+        --logo__path--3--fill: var(--logo__path--1--fill);
     }
 }
 
@@ -592,7 +592,7 @@ input::placeholder {
     --card-borderRadius: var(--global-borderRadius);
     background-color: var(--card-backgroundColor, White);
     margin-bottom: 24px;
-    border-radius: var(--card-borderRadius);
+    border-radius: var(--card-borderRadius, var(--global-borderRadius));
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
 }
@@ -604,7 +604,7 @@ input::placeholder {
     overflow: auto; /* Fix margin collapse */
 }
 
-.c-card__footer {   
+.c-card__footer {
     text-align: center;
     border-top: 1px solid var(--card__footer-borderColor, var(--global-color-neutral-xxx-light));
 }
@@ -658,7 +658,7 @@ input::placeholder {
     appearance: none;
     width: 100%;
     border-radius: var(--input-borderRadius);
-    border: 1px solid var(--input-borderColor, var(--global-input-borderColor));    
+    border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
     background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
     color: var(--input-color);
     font-family: inherit;
@@ -712,7 +712,7 @@ more padding on the right to avoid overlap
     margin-bottom: 0;
     padding-bottom: 8px;
     font-size: 14px;
-    line-height: 16px;    
+    line-height: 16px;
 }
 
 .c-label--option {
@@ -739,7 +739,7 @@ more padding on the right to avoid overlap
     Class to put on form buttons or
 */
 
-.c-button {    
+.c-button {
     --button-borderRadius: var(--global-borderRadius);
     font-size: 16px;
     font-weight: 600;
@@ -804,14 +804,14 @@ more padding on the right to avoid overlap
 /* Hide the actual input with the class .o-hide-accessible */
 
 .c-custom-option {
-    --custom-option-Background: var(--global-input-backgroundColor);
+    --custom-option-background: var(--global-input-backgroundColor);
     --custom-option-borderRadius: var(--global-borderRadius);
     --custom-option-borderColor: var(--global-input-borderColor);
     --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
     --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
     --custom-option-boxShadowColor: var(--global-input-boxShadowColor);
     --custom-option-focus-boxShadow: var(--global-input-boxShadowSpread) var(--custom-option-boxShadowColor);
-    --custom-option__symbol-Fill: var(--global-color-alpha);
+    --custom-option__symbol-fill: var(--global-color-alpha);
     --custom-option-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
     display: flex;
     align-items: center;
@@ -824,7 +824,7 @@ more padding on the right to avoid overlap
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    background: var(--custom-option-Background);
+    background: var(--custom-option-background);
     border: 1px solid var(--custom-option-borderColor);
     transition: var(--custom-option-transition);
     box-shadow: var(--custom-option-boxShadow, 0);
@@ -848,11 +848,11 @@ more padding on the right to avoid overlap
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
     width: 10px;
     height: 10px;
-    fill: var(--custom-option__symbol-Fill);
+    fill: var(--custom-option__symbol-fill);
 }
 
 .c-custom-option__fake-input--radio .c-custom-option__symbol {
-    background-color: var(--custom-option__symbol-Fill);
+    background-color: var(--custom-option__symbol-fill);
     border-radius: 100%;
     width: 6px;
     height: 6px;
@@ -1025,7 +1025,7 @@ more padding on the right to avoid overlap
 }
 
 .c-password-toggle {
-    --password-toggle__symbol-Fill: var(--global-color-neutral-x-light);
+    --password-toggle__symbol-fill: var(--global-color-neutral-x-light);
     position: absolute;
     top: 0;
     right: 0;
@@ -1042,7 +1042,7 @@ more padding on the right to avoid overlap
     display: block;
     width: 20px;
     height: 20px;
-    fill: var(--password-toggle__symbol-Fill);
+    fill: var(--password-toggle__symbol-fill);
 }
 
 .c-password-toggle__symbol--hide {
@@ -1059,7 +1059,7 @@ more padding on the right to avoid overlap
 
 @media (prefers-color-scheme: dark) {
     .c-password-toggle {
-        --password-toggle__symbol-Fill: var(--global-color-neutral-x-dark);
+        --password-toggle__symbol-fill: var(--global-color-neutral-x-dark);
     }
 }
 
