@@ -69,32 +69,13 @@
     /* forms */
     --global-label-color: var(--global-color-neutral-xx-dark);
     --global-placeholder-color: var(--global-color-neutral-x-light);
+    
     --global-input-backgroundColor: White;
     --global-input-color: var(--global-color-neutral-xxxx-dark);
     --global-input-borderColor: var(--global-color-neutral-xxx-light);
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
-    --global-input-error-borderColor: var(--global-color-error);
-    --global-input-boxShadowSpread: 0 0 0 3px;
-    --global-input-boxShadowColor: var(--global-color-alpha-x-transparent);
-    --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --global-page-color: White;
-        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
-
-        --global-label-color: var(--global-color-neutral-xx-light);
-        --global-placeholder-color: var(--global-color-neutral-dark);
-        --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
-        --global-input-color: var(--global-color-neutral-xxxx-light);
-        --global-input-borderColor: var(--global-input-backgroundColor);
-        --global-input-hover-borderColor: var(--global-input-backgroundColor);
-        --global-input-focus-borderColor: var(--global-input-backgroundColor);
-        --global-input-boxShadowColor: var(--global-color-alpha-transparent);
-        --global-input-error-boxShadowColor: var(--global-color-error-transparent);
-    }
+    --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
 
 /*------------------------------------*\
@@ -695,13 +676,6 @@ input::placeholder {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    .c-card {
-        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
-        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
-    }
-}
-
 /*
     Component: Forms
     ---
@@ -726,9 +700,11 @@ input::placeholder {
     appearance: none;
     width: 100%;
     border-radius: var(--input-borderRadius, var(--global-borderRadius));
+
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
     color: var(--global-input-color);
+
     font-family: inherit;
     font-size: 16px;
     line-height: calc(var(--global-baseline) * 3);
@@ -744,7 +720,7 @@ input::placeholder {
 .c-input:focus,
 .c-input:active {
     border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
-    box-shadow: var(--global-input-boxShadowSpread) var(--input-boxShadowColor, var(--global-input-boxShadowColor));
+    box-shadow: var(--global-input-boxShadow);
 }
 
 /*
@@ -831,15 +807,6 @@ more padding on the right to avoid overlap
     box-shadow: var(--button-active-boxShadow, 0);
 }
 
-@media (prefers-color-scheme: dark) {
-    .c-button {
-        --button-borderColor: var(--global-color-alpha);
-        --button-hover-borderColor: var(--global-color-alpha-light);
-        --button-active-borderColor: var(--global-color-alpha-dark);
-        --button-focus-borderColor: var(--global-color-alpha-x-dark);
-    }
-}
-
 /*
     Component: Option list
     ---
@@ -868,8 +835,7 @@ more padding on the right to avoid overlap
     --custom-option-borderColor: var(--global-input-borderColor);
     --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
     --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
-    --custom-option-boxShadowColor: var(--global-input-boxShadowColor);
-    --custom-option-focus-boxShadow: var(--global-input-boxShadowSpread) var(--custom-option-boxShadowColor);
+    --custom-option-focus-boxShadow: var(--global-input-boxShadow);
     --custom-option__symbol-fill: var(--global-color-alpha);
     --custom-option-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     display: flex;
@@ -964,7 +930,7 @@ more padding on the right to avoid overlap
     --toggle-focus-borderColor: var(--global-input-focus-borderColor);
     --toggle-checked-borderColor: var(--global-color-alpha-dark);
     --toggle-checked-backgroundColor: var(--global-color-alpha);
-    --toggle-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+    --toggle-focus-boxShadow: var(--global-input-boxShadow);
     --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     --toggle__switch-backgroundColor: White;
     --toggle__switch-checked-backgroundColor: White;
@@ -1034,20 +1000,6 @@ more padding on the right to avoid overlap
 
 .c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
     margin-left: -6px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-custom-toggle-list {
-        --toggle-list-borderColor: var(--global-color-neutral-xx-dark);
-    }
-
-    .c-custom-toggle {
-        --toggle-backgroundColor: var(--global-input-backgroundColor);
-        --toggle-checked-borderColor: var(--toggle-checked-backgroundColor);
-        --toggle-focus-boxShadow: 0 0 0 1px var(--global-color-neutral-xxxx-dark), var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
-        --toggle__switch-backgroundColor: var(--global-color-neutral-dark);
-        --toggle__switch-checked-backgroundColor: White;
-    }
 }
 
 /*
