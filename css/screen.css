@@ -53,7 +53,7 @@
 
     /* transitions */
     --global-transitionEasing-out: ease-out;
-    --global-transitionTiming-alpha: .1s;
+    --global-transitionDuration-alpha: .1s;
 
      /* Baseline settings */
     --global-baseline: 8px;         
@@ -244,7 +244,7 @@ hr {
 }
 
 a {
-    --link-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    --link-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     transition: var(--link-transition);
     color: var(--link-color, var(--global-color-alpha));
     outline-color: var(--link-boxShadowColor);
@@ -720,7 +720,7 @@ input::placeholder {
 */
 
 .c-input {
-    --input-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -811,7 +811,7 @@ more padding on the right to avoid overlap
     width: 100%;
     outline: none;
     box-shadow: var(--button-boxShadow, 0);
-    transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
 }
 
 .c-button:hover {
@@ -871,7 +871,7 @@ more padding on the right to avoid overlap
     --custom-option-boxShadowColor: var(--global-input-boxShadowColor);
     --custom-option-focus-boxShadow: var(--global-input-boxShadowSpread) var(--custom-option-boxShadowColor);
     --custom-option__symbol-fill: var(--global-color-alpha);
-    --custom-option-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    --custom-option-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     display: flex;
     align-items: center;
 }
@@ -965,10 +965,10 @@ more padding on the right to avoid overlap
     --toggle-checked-borderColor: var(--global-color-alpha-dark);
     --toggle-checked-backgroundColor: var(--global-color-alpha);
     --toggle-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
-    --toggle-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     --toggle__switch-backgroundColor: White;
     --toggle__switch-checked-backgroundColor: White;
-    --toggle__switch-transition: all var(--global-transitionTiming-alpha) var(--global-transitionEasing-out);
+    --toggle__switch-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     display: flex;
     align-items: center;
 }
