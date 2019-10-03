@@ -38,9 +38,6 @@
     --global-color-neutral-xx-dark: #4b4c60;
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
-    --global-color-error: #FF3333;
-    --global-color-error-transparent: #FF3333bf;
-    --global-color-error-x-transparent: #FF33334d;
 
     /* global page settings */
     --global-html-color: var(--global-color-neutral-xxxx-dark);
@@ -61,10 +58,8 @@
     --global-input-borderColor: var(--global-color-neutral-xxx-light);
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
-    --global-input-error-borderColor: var(--global-color-error);
     --global-input-boxShadowSpread: 0 0 0 3px;
     --global-input-boxShadowColor: var(--global-color-alpha-x-transparent);
-    --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,7 +75,6 @@
         --global-input-hover-borderColor: var(--global-input-backgroundColor);
         --global-input-focus-borderColor: var(--global-input-backgroundColor);
         --global-input-boxShadowColor: var(--global-color-alpha-transparent);
-        --global-input-error-boxShadowColor: var(--global-color-error-transparent);
     }
 }
 
@@ -692,13 +686,6 @@ input::placeholder {
     box-shadow: var(--input-focus-boxShadow);
 }
 
-.c-input--error {
-    --input-borderColor: var(--global-input-error-borderColor);
-    --input-hover-borderColor: var(--global-input-error-borderColor);
-    --input-focus-borderColor: var(--global-input-error-borderColor);
-    --input-boxShadowColor: var(--global-input-error-boxShadowColor);
-}
-
 /*
 Input password with toggle checkbox on top of it needs
 more padding on the right to avoid overlap
@@ -731,20 +718,6 @@ more padding on the right to avoid overlap
 
 .c-label--option {
     padding-bottom: 0;
-}
-
-.c-label__error-message {
-    font-weight: 600;
-	float: right;
-	display: none;
-}
-
-.c-label__error-message.is-visible {
-	display: block;
-}
-
-.c-label--error {
-    --label-color: var(--global-color-error);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1046,50 +1019,6 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
-
-.c-password-toggle-container {
-    position: relative;
-    display: block;
-}
-
-.c-password-toggle {
-    --password-toggle__symbol-Fill: var(--global-color-neutral-x-light);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.c-password-toggle__label {
-    display: flex;
-    align-items: center;
-    padding: 14px 16px;
-}
-
-.c-password-toggle__symbol {
-    display: block;
-    width: 20px;
-    height: 20px;
-    fill: var(--password-toggle__symbol-Fill);
-}
-
-.c-password-toggle__symbol--hide {
-    display: none;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
-    display: block;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
-    display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-password-toggle {
-        --password-toggle__symbol-Fill: var(--global-color-neutral-x-dark);
-    }
-}
 
 /*------------------------------------*\
 #UTILITIES
