@@ -870,7 +870,7 @@ more padding on the right to avoid overlap
     display: block;
     opacity: 0; /* Hide the symbol initially */
     transform: scale(.5);
-    transition: all var(--custom-option-transition);
+    transition: var(--custom-option-transition);
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
