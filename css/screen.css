@@ -938,7 +938,7 @@ more padding on the right to avoid overlap
 .c-option--hidden:checked + .c-custom-toggle {
     --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
     --toggle-borderColor: var(--toggle-checked-borderColor);
-    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);
+    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);    
 }
 
 .c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
