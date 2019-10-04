@@ -17,15 +17,30 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
+
+        <script src="./script/app.js"></script>
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
             <div class="o-container u-max-width-xs">
                 <form class="c-card" action="#">
                     <div class="c-card__body">
+                       
                         <h2 class="c-card__title">
                             Custom input types
                         </h2>
+                        <div class="o-section">
+                            <h5>
+                                Floating labels
+                            </h5>
+                            <p class="c-form-field c-form-field--with-floating-label">
+                                <label class="c-label c-label--floating js-floating-label" for="username">
+                                    Email
+                                </label>
+                                <input class="c-input c-input--with-floating-label js-floating-input" type="email" name="username" id="username"
+                                    required>
+                            </p>
+                        </div>
                         <div class="o-section">
                             <!-- Custom checkboxes -->
                             <h5>

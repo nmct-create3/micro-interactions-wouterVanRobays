@@ -704,6 +704,10 @@ input::placeholder {
     Everything form related here
 */
 
+.c-form-field {
+    position: relative;
+}
+
 .c-form-field--option {
     display: flex;
     align-items: center;
@@ -752,6 +756,12 @@ more padding on the right to avoid overlap
     padding-right: 52px;
 }
 
+/* input password with floating label */
+
+.c-input--with-floating-label:focus {
+    box-shadow: none;
+}
+
 /* option input for checkboxes and radio buttons */
 
 .c-option {
@@ -786,9 +796,25 @@ more padding on the right to avoid overlap
 	display: block;
 }
 
-/* .c-label--error {
-    --label-color: var(--global-color-error);
-} */
+.c-label--floating {
+    position: absolute;
+    top: calc(var(--global-baseline) * 2);
+    left: var(--global-whitespace-sm);
+    padding: 0  var(--global-whitespace-sm);
+    background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
+    transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+}
+
+.is-floating,
+.c-form-field:focus-within .c-label--floating {
+    transform: translateY(calc(var(--global-baseline) * -3))
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-label--floating {
+        --label--floating-backgroundColor: transparent;
+    }
+}
 
 /*
     Component: Button
