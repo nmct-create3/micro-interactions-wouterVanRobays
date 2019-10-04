@@ -823,7 +823,7 @@ more padding on the right to avoid overlap
     display: block;
     opacity: 0; /* Hide the symbol initially */
     transform: scale(.5);
-    transition: transform var(--global-transitionTiming-alpha);
+    transition: transform var(--global-transitionTiming-alpha), opacity var(--global-transitionTiming-alpha);
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
@@ -905,7 +905,7 @@ more padding on the right to avoid overlap
     background-color: var(--toggle-backgroundColor);
     border-radius: 32px;
     border: var(--global-borderWidth) solid var(--toggle-borderColor, var(--global-input-borderColor));
-    transition: border var(--global-transitionTiming-alpha), box-shadow var(--global-transitionTiming-alpha);;
+    transition: all var(--global-transitionTiming-alpha);
     box-shadow: var(--toggle-boxShadow, 0);
 }
 
