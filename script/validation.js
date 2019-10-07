@@ -1,20 +1,7 @@
 /* -------------------------------------------------------------------------- */
 // Alle interactieve onderdelen voor onze site. We maken van alle inputs een object met zijn eigen eigenschappen.
-let email = {
-		label: null,
-		errorMessage: null,
-		field: null
-	},
-	password = {
-		label: null,
-		errorMessage: null,
-		field: null
-	},
-	remember = {
-		label: null,
-		errorMessage: null,
-		field: null
-	},
+let email = {},
+	password = {},
 	signInButton;
 /* -------------------------------------------------------------------------- */
 
