@@ -75,8 +75,8 @@
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-error-borderColor: var(--global-color-error);
-    --global-input-boxShadowSpread: 0 0 0 3px;
-    --global-input-boxShadowColor: var(--global-color-alpha-x-transparent);
+    --global-input-focus-boxShadowSpread: 0 0 0 3px;
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
@@ -92,7 +92,7 @@
         --global-input-borderColor: var(--global-input-backgroundColor);
         --global-input-hover-borderColor: var(--global-input-backgroundColor);
         --global-input-focus-borderColor: var(--global-input-backgroundColor);
-        --global-input-boxShadowColor: var(--global-color-alpha-transparent);
+        --global-input-focus-boxShadowColor: var(--global-color-alpha-transparent);
         --global-input-error-boxShadowColor: var(--global-color-error-transparent);
     }
 }
@@ -266,10 +266,6 @@ a:active {
 
 a:focus {
     color: var(--link-focus-color, var(--global-color-alpha));
-}
-
-label {
-    color: var(--label-color, var(--global-label-color));
 }
 
 label,
@@ -708,6 +704,10 @@ input::placeholder {
     Everything form related here
 */
 
+.c-form-field {
+    position: relative;
+}
+
 .c-form-field--option {
     display: flex;
     align-items: center;
@@ -744,7 +744,7 @@ input::placeholder {
 .c-input:focus,
 .c-input:active {
     border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
-    box-shadow: var(--global-input-boxShadowSpread) var(--input-boxShadowColor, var(--global-input-boxShadowColor));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
 }
 
 /*
@@ -754,6 +754,12 @@ more padding on the right to avoid overlap
 
 .c-input--password-with-toggle {
     padding-right: 52px;
+}
+
+/* input password with floating label */
+
+.c-input--with-floating-label:focus {
+    box-shadow: none;
 }
 
 /* option input for checkboxes and radio buttons */
@@ -773,6 +779,7 @@ more padding on the right to avoid overlap
     font-size: 14px;
     padding-bottom: var(--global-whitespace-sm);    
     line-height: calc(var(--global-baseline) * 2);
+    color: var(--label-color, var(--global-label-color));
 }
 
 .c-label--option {
@@ -789,9 +796,25 @@ more padding on the right to avoid overlap
 	display: block;
 }
 
-/* .c-label--error {
-    --label-color: var(--global-color-error);
-} */
+.c-label--floating {
+    position: absolute;
+    top: calc(var(--global-baseline) * 2);
+    left: var(--global-whitespace-sm);
+    padding: 0  var(--global-whitespace-sm);
+    background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
+    transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+}
+
+.is-floating,
+.c-form-field:focus-within .c-label--floating {
+    transform: translateY(calc(var(--global-baseline) * -3))
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-label--floating {
+        --label--floating-backgroundColor: transparent;
+    }
+}
 
 /*
     Component: Button
@@ -822,7 +845,7 @@ more padding on the right to avoid overlap
 .c-button:focus {
     background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
     border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
-    box-shadow: var(--global-input-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-boxShadowColor));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
 }
 
 .c-button:active {
@@ -868,8 +891,8 @@ more padding on the right to avoid overlap
     --custom-option-borderColor: var(--global-input-borderColor);
     --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
     --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
-    --custom-option-boxShadowColor: var(--global-input-boxShadowColor);
-    --custom-option-focus-boxShadow: var(--global-input-boxShadowSpread) var(--custom-option-boxShadowColor);
+    --custom-option-focus-boxShadowColor: var(--global-input-focus-boxShadowColor);
+    --custom-option-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--custom-option-focus-boxShadowColor);
     --custom-option__symbol-fill: var(--global-color-alpha);
     --custom-option-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     display: flex;
@@ -964,7 +987,7 @@ more padding on the right to avoid overlap
     --toggle-focus-borderColor: var(--global-input-focus-borderColor);
     --toggle-checked-borderColor: var(--global-color-alpha-dark);
     --toggle-checked-backgroundColor: var(--global-color-alpha);
-    --toggle-focus-boxShadow: var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+    --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
     --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     --toggle__switch-backgroundColor: White;
     --toggle__switch-checked-backgroundColor: White;
@@ -1044,7 +1067,7 @@ more padding on the right to avoid overlap
     .c-custom-toggle {
         --toggle-backgroundColor: var(--global-input-backgroundColor);
         --toggle-checked-borderColor: var(--toggle-checked-backgroundColor);
-        --toggle-focus-boxShadow: 0 0 0 1px var(--global-color-neutral-xxxx-dark), var(--global-input-boxShadowSpread) var(--global-input-boxShadowColor);
+        --toggle-focus-boxShadow: 0 0 0 1px var(--global-color-neutral-xxxx-dark), var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
         --toggle__switch-backgroundColor: var(--global-color-neutral-dark);
         --toggle__switch-checked-backgroundColor: White;
     }
@@ -1131,7 +1154,7 @@ more padding on the right to avoid overlap
     --input-borderColor: var(--global-input-error-borderColor);
     --input-hover-borderColor: var(--global-input-error-borderColor);
     --input-focus-borderColor: var(--global-input-error-borderColor);
-    --input-boxShadowColor: var(--global-input-error-boxShadowColor);
+    --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
 }
 
 /*------------------------------------*\
